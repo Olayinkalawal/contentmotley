@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Motley – African YouTube Growth & Monetization Partner</title>
+    <meta name="description" content="Content Motley is a creator service provider helping African creators, filmmakers and media brands grow on YouTube.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect to YouTube for faster video loading -->
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brutal-yellow': '#FFDE59',
+                        'brutal-pink': '#FF6B9D',
+                        'brutal-blue': '#4ECDC4',
+                        'brutal-orange': '#FF8C42',
+                        'brutal-purple': '#9B5DE5',
+                        'brutal-green': '#00F5D4',
+                        'brutal-red': '#F15BB5',
+                        'brutal-black': '#0D0D0D',
+                        'brutal-white': '#FAFAFA',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'brutal': '8px 8px 0px 0px #0D0D0D',
+                        'brutal-lg': '12px 12px 0px 0px #0D0D0D',
+                        'brutal-xl': '16px 16px 0px 0px #0D0D0D',
+                        'brutal-hover': '4px 4px 0px 0px #0D0D0D',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Syne', sans-serif;
+            background: #FAFAFA;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFDE59;
+            border: 3px solid #0D0D0D;
+        }
+
+        /* Marquee animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Float animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .float-delay-1 { animation-delay: 1s; }
+        .float-delay-2 { animation-delay: 2s; }
+        .float-delay-3 { animation-delay: 3s; }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stagger children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .stagger-children.active > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.active > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.active > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-children.active > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-children.active > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; }
+        .stagger-children.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Brutal button hover */
+        .brutal-btn {
+            transition: all 0.15s ease;
+        }
+        .brutal-btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px 0px #0D0D0D;
+        }
+        .brutal-btn:active {
+            transform: translate(8px, 8px);
+            box-shadow: none;
+        }
+
+        /* Card tilt on hover */
+        .tilt-card {
+            transition: transform 0.3s ease;
+        }
+        .tilt-card:hover {
+            transform: rotate(-2deg) scale(1.02);
+        }
+
+        /* Glitch text effect */
+        .glitch {
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            color: #FF6B9D;
+            animation: glitch-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+        }
+        .glitch::after {
+            color: #4ECDC4;
+            animation: glitch-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+        }
+        @keyframes glitch-1 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            60% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+        }
+        @keyframes glitch-2 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(3px); }
+            40% { transform: translateX(-3px); }
+            60% { transform: translateX(2px); }
+            80% { transform: translateX(-2px); }
+        }
+
+        /* Gallery hover effect */
+        .gallery-item {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px) rotate(2deg);
+            z-index: 10;
+        }
+
+        /* Video play button pulse */
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 4px solid currentColor;
+            border-radius: 50%;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+
+        /* Rotating badge */
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        /* Noise texture overlay */
+        .noise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        /* Custom cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #0D0D0D;
+        }
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #0D0D0D;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Squiggle decoration */
+        .squiggle {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5' fill='none' stroke='%230D0D0D' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-size: 100px 10px;
+        }
+    </style>
+</head>
+<body class="bg-brutal-white text-brutal-black noise relative">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brutal-yellow border-b-4 border-brutal-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="font-syne font-extrabold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                    <span class="bg-brutal-black text-brutal-yellow px-2 py-1">CONTENT</span>
+                    <span>MOTLEY</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-3 font-mono text-sm">
+                    <a href="#about" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">About</a>
+                    <a href="#services" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">Services</a>
+                    <a href="#creators" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">Creators</a>
+                    <a href="#brands" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">Brands</a>
+                    <a href="#gallery" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">Gallery</a>
+                    <a href="#results" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">Results</a>
+                    <a href="#contact" class="bg-brutal-black text-brutal-yellow px-5 py-2 border-4 border-brutal-black shadow-brutal brutal-btn font-bold">
+                        Join Us →
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden w-10 h-10 bg-brutal-black text-brutal-yellow flex items-center justify-center border-2 border-brutal-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-brutal-pink pt-20">
+        <div class="flex flex-col items-center justify-center h-full gap-5 font-syne text-2xl font-bold">
+            <a href="#about" class="mobile-link hover:text-brutal-black transition-colors">About</a>
+            <a href="#services" class="mobile-link hover:text-brutal-black transition-colors">Services</a>
+            <a href="#creators" class="mobile-link hover:text-brutal-black transition-colors">Creators</a>
+            <a href="#brands" class="mobile-link hover:text-brutal-black transition-colors">Brands</a>
+            <a href="#gallery" class="mobile-link hover:text-brutal-black transition-colors">Gallery</a>
+            <a href="#results" class="mobile-link hover:text-brutal-black transition-colors">Results</a>
+            <a href="#contact" class="mobile-link bg-brutal-black text-brutal-yellow px-8 py-4 border-4 border-brutal-black mt-4">
+                Join Us →
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-brutal-yellow via-brutal-orange to-brutal-pink">
+        <!-- Decorative shapes -->
+        <div class="absolute top-32 left-10 w-32 h-32 bg-brutal-blue border-4 border-brutal-black rotate-12 float"></div>
+        <div class="absolute top-40 right-20 w-24 h-24 bg-brutal-purple border-4 border-brutal-black -rotate-6 float float-delay-1"></div>
+        <div class="absolute bottom-40 left-1/4 w-20 h-20 bg-brutal-green border-4 border-brutal-black rotate-45 float float-delay-2"></div>
+        <div class="absolute bottom-32 right-1/3 w-16 h-16 bg-brutal-red border-4 border-brutal-black float float-delay-3"></div>
+        
+        <!-- Grid pattern overlay -->
+        <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#0D0D0D 1px, transparent 1px), linear-gradient(90deg, #0D0D0D 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="inline-block bg-brutal-black text-brutal-yellow px-4 py-2 font-mono text-sm mb-6 border-4 border-brutal-black shadow-brutal">
+                        🎬 Africa's Creator Service Provider
+                    </div>
+                    
+                    <h1 class="font-syne font-extrabold text-5xl md:text-7xl lg:text-8xl leading-none mb-6">
+                        <span class="glitch" data-text="Managed">Managed</span> by
+                        <span class="bg-brutal-black text-brutal-yellow px-4 inline-block transform -rotate-2">experts.</span>
+                        <br>
+                        Built for
+                        <span class="underline decoration-wavy decoration-brutal-black underline-offset-8">top creators.</span>
+                    </h1>
+                    
+                    <p class="font-mono text-lg md:text-xl mb-8 max-w-xl bg-brutal-white/80 p-4 border-4 border-brutal-black">
+                        A YouTube-first team helping creators, filmmakers and media brands turn <strong>views into long-term revenue.</strong>
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-brutal-black text-brutal-yellow px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-black shadow-brutal-lg brutal-btn inline-flex items-center gap-2">
+                            Apply to Join
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="bg-brutal-white text-brutal-black px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-black shadow-brutal-lg brutal-btn">
+                            Book a Call
+                        </a>
+                    </div>
+
+                    <p class="font-mono text-sm mt-6 opacity-70">
+                        We're selective. We work with creators who treat this like a real business.
+                    </p>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative reveal-right hidden lg:block">
+                    <div class="relative">
+                        <!-- Main card -->
+                        <div class="bg-brutal-blue border-4 border-brutal-black p-8 shadow-brutal-xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div class="aspect-video bg-brutal-black flex items-center justify-center relative overflow-hidden">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/Bt7EWwhujkY?autoplay=1&mute=1&loop=1&playlist=Bt7EWwhujkY&controls=0&showinfo=0&rel=0&modestbranding=1"
+                                    class="absolute inset-0 w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    frameborder="0"
+                                    loading="eager">
+                                </iframe>
+                            </div>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="font-mono text-sm">Creator Showcase 2025</span>
+                                <span class="bg-brutal-yellow px-3 py-1 font-mono text-xs border-2 border-brutal-black">REEL</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating stats -->
+                        <div class="absolute -top-8 -right-8 bg-brutal-yellow border-4 border-brutal-black p-4 shadow-brutal transform -rotate-6 float">
+                            <span class="font-syne font-extrabold text-3xl">100M+</span>
+                            <span class="font-mono text-xs block">Monthly Views</span>
+                        </div>
+                        
+                        <div class="absolute -bottom-8 -left-8 bg-brutal-purple text-brutal-white border-4 border-brutal-black p-4 shadow-brutal transform rotate-6 float float-delay-1">
+                            <span class="font-syne font-extrabold text-3xl">70+</span>
+                            <span class="font-mono text-xs block">Channels Managed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="bg-brutal-black text-brutal-yellow px-4 py-2 font-mono text-sm animate-bounce border-2 border-brutal-black">
+                ↓ Scroll to explore
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Marquee -->
+    <section class="bg-brutal-black py-6 border-y-4 border-brutal-black overflow-hidden">
+        <div class="marquee-track flex whitespace-nowrap">
+            <div class="flex items-center gap-12 px-6">
+                <span class="text-brutal-yellow font-syne font-bold text-2xl">100M+ MONTHLY VIEWS</span>
+                <span class="text-brutal-pink">★</span>
+                <span class="text-brutal-blue font-syne font-bold text-2xl">150+ TV / SERIES</span>
+                <span class="text-brutal-green">★</span>
+                <span class="text-brutal-purple font-syne font-bold text-2xl">70+ CHANNELS</span>
+                <span class="text-brutal-orange">★</span>
+                <span class="text-brutal-yellow font-syne font-bold text-2xl">16+ YEARS EXPERIENCE</span>
+                <span class="text-brutal-pink">★</span>
+                <span class="text-brutal-blue font-syne font-bold text-2xl">13+ CHANNELS WITH 1M+ SUBS</span>
+                <span class="text-brutal-green">★</span>
+            </div>
+            <div class="flex items-center gap-12 px-6">
+                <span class="text-brutal-yellow font-syne font-bold text-2xl">100M+ MONTHLY VIEWS</span>
+                <span class="text-brutal-pink">★</span>
+                <span class="text-brutal-blue font-syne font-bold text-2xl">150+ TV / SERIES</span>
+                <span class="text-brutal-green">★</span>
+                <span class="text-brutal-purple font-syne font-bold text-2xl">70+ CHANNELS</span>
+                <span class="text-brutal-orange">★</span>
+                <span class="text-brutal-yellow font-syne font-bold text-2xl">16+ YEARS EXPERIENCE</span>
+                <span class="text-brutal-pink">★</span>
+                <span class="text-brutal-blue font-syne font-bold text-2xl">13+ CHANNELS WITH 1M+ SUBS</span>
+                <span class="text-brutal-green">★</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We're For -->
+    <section id="about" class="py-20 md:py-32 bg-brutal-white relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-64 h-64 bg-brutal-green/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-0 w-64 h-64 bg-brutal-pink/20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-black text-brutal-yellow px-4 py-2 inline-block mb-4">WHO WE'RE FOR</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    Built for <span class="bg-brutal-pink px-3">serious</span> storytellers
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 stagger-children">
+                <!-- Creators -->
+                <div class="bg-brutal-yellow border-4 border-brutal-black p-8 shadow-brutal tilt-card">
+                    <div class="w-16 h-16 bg-brutal-black text-brutal-yellow flex items-center justify-center text-3xl mb-6 border-4 border-brutal-black">
+                        🎥
+                    </div>
+                    <h3 class="font-syne font-bold text-2xl mb-4">Creators</h3>
+                    <p class="font-mono text-sm">
+                        Established creators ready to move from "creator" to "media company". You want systems, not chaos.
+                    </p>
+                    <a href="#contact" class="inline-block mt-6 font-mono text-sm underline underline-offset-4 hover:bg-brutal-black hover:text-brutal-yellow px-2 py-1 transition-colors">
+                        Join the network →
+                    </a>
+                </div>
+
+                <!-- Media Owners -->
+                <div class="bg-brutal-blue border-4 border-brutal-black p-8 shadow-brutal tilt-card md:translate-y-8">
+                    <div class="w-16 h-16 bg-brutal-black text-brutal-blue flex items-center justify-center text-3xl mb-6 border-4 border-brutal-black">
+                        🎬
+                    </div>
+                    <h3 class="font-syne font-bold text-2xl mb-4">Media Owners</h3>
+                    <p class="font-mono text-sm">
+                        You own film, TV or digital IP and want predictable, recurring revenue from YouTube.
+                    </p>
+                    <a href="#contact" class="inline-block mt-6 font-mono text-sm underline underline-offset-4 hover:bg-brutal-black hover:text-brutal-blue px-2 py-1 transition-colors">
+                        Monetize your catalogue →
+                    </a>
+                </div>
+
+                <!-- Brands -->
+                <div class="bg-brutal-purple text-brutal-white border-4 border-brutal-black p-8 shadow-brutal tilt-card">
+                    <div class="w-16 h-16 bg-brutal-black text-brutal-purple flex items-center justify-center text-3xl mb-6 border-4 border-brutal-black">
+                        💼
+                    </div>
+                    <h3 class="font-syne font-bold text-2xl mb-4">Brands</h3>
+                    <p class="font-mono text-sm">
+                        Brands and agencies needing trusted African creators for real business outcomes.
+                    </p>
+                    <a href="#contact" class="inline-block mt-6 font-mono text-sm underline underline-offset-4 hover:bg-brutal-white hover:text-brutal-purple px-2 py-1 transition-colors">
+                        Brief our team →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By / Partners Strip -->
+    <section class="py-12 bg-brutal-white border-y-4 border-brutal-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center font-mono text-sm text-brutal-black/60 mb-8">LEADERSHIP EXPERIENCE FROM</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-brutal-black rounded-full flex items-center justify-center border-4 border-brutal-black group-hover:bg-brutal-red transition-colors">
+                        <span class="text-brutal-white font-syne font-bold text-xl">YT</span>
+                    </div>
+                    <span class="font-mono text-xs mt-2 text-brutal-black/70">YouTube</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-brutal-blue rounded-full flex items-center justify-center border-4 border-brutal-black group-hover:scale-110 transition-transform">
+                        <span class="text-brutal-black font-syne font-bold text-lg">P+</span>
+                    </div>
+                    <span class="font-mono text-xs mt-2 text-brutal-black/70">Paramount</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-brutal-purple rounded-full flex items-center justify-center border-4 border-brutal-black group-hover:scale-110 transition-transform">
+                        <span class="text-brutal-white font-syne font-bold text-lg">MC</span>
+                    </div>
+                    <span class="font-mono text-xs mt-2 text-brutal-black/70">Multichoice</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-brutal-green rounded-full flex items-center justify-center border-4 border-brutal-black group-hover:scale-110 transition-transform">
+                        <span class="text-brutal-black font-syne font-bold text-lg">AF</span>
+                    </div>
+                    <span class="font-mono text-xs mt-2 text-brutal-black/70">African Magic</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-brutal-orange rounded-full flex items-center justify-center border-4 border-brutal-black group-hover:scale-110 transition-transform">
+                        <span class="text-brutal-black font-syne font-bold text-lg">CL</span>
+                    </div>
+                    <span class="font-mono text-xs mt-2 text-brutal-black/70">Circo Live</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Creators Section -->
+    <section id="creators" class="py-20 md:py-32 bg-brutal-yellow relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brutal-orange/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brutal-pink/30 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <span class="font-mono text-sm bg-brutal-black text-brutal-yellow px-4 py-2 inline-block mb-6">FOR CREATORS</span>
+                    <h2 class="font-syne font-extrabold text-4xl md:text-5xl mb-6">
+                        For <span class="bg-brutal-black text-brutal-yellow px-2">creators</span>, filmmakers & media owners
+                    </h2>
+                    <p class="font-mono text-sm mb-8 text-brutal-black/80">
+                        Whether you're a solo creator or a studio with a deep catalogue, we help you optimise, scale and monetise your YouTube presence.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-brutal-black text-brutal-yellow flex items-center justify-center font-bold shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-syne font-bold">Channel Strategy & Programming</h4>
+                                <p class="font-mono text-xs text-brutal-black/70">Upload calendars, series design, and content planning</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-brutal-black text-brutal-yellow flex items-center justify-center font-bold shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-syne font-bold">Monetization & Brand Deals</h4>
+                                <p class="font-mono text-xs text-brutal-black/70">Ad optimization, sponsorships, and revenue growth</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-brutal-black text-brutal-yellow flex items-center justify-center font-bold shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-syne font-bold">SEO & Thumbnails</h4>
+                                <p class="font-mono text-xs text-brutal-black/70">Optimized titles, tags, and click-worthy thumbnails</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-brutal-black text-brutal-yellow flex items-center justify-center font-bold shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-syne font-bold">Rights & Content ID</h4>
+                                <p class="font-mono text-xs text-brutal-black/70">Protect your IP and monetize reuploads</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-brutal-black text-brutal-yellow px-8 py-4 font-syne font-bold border-4 border-brutal-black shadow-brutal brutal-btn">
+                        Join the Creator Network →
+                    </a>
+                </div>
+                
+                <div class="reveal-right">
+                    <div class="bg-brutal-black border-4 border-brutal-black p-8 shadow-brutal-lg transform rotate-2 hover:rotate-0 transition-transform">
+                        <div class="text-brutal-yellow mb-6">
+                            <span class="text-6xl">🎬</span>
+                        </div>
+                        <h3 class="font-syne font-bold text-2xl text-brutal-yellow mb-4">What You Get</h3>
+                        <ul class="space-y-3 font-mono text-sm text-brutal-white/80">
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> Dedicated channel strategist</li>
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> Monthly performance reviews</li>
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> Access to brand deal pipeline</li>
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> Premium tools & analytics</li>
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> Creator community & support</li>
+                            <li class="flex items-center gap-2"><span class="text-brutal-yellow">→</span> 24/7 WhatsApp/Telegram support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Brands Section -->
+    <section id="brands" class="py-20 md:py-32 bg-brutal-purple text-brutal-white relative overflow-hidden">
+        <div class="absolute top-20 left-20 w-32 h-32 bg-brutal-pink border-4 border-brutal-white/20 rotate-12 float"></div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 bg-brutal-blue border-4 border-brutal-white/20 -rotate-6 float float-delay-1"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 reveal-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-brutal-yellow text-brutal-black border-4 border-brutal-black p-6 shadow-brutal transform -rotate-2 hover:rotate-0 transition-transform">
+                            <span class="text-3xl mb-2 block">🎯</span>
+                            <h4 class="font-syne font-bold text-lg">Strategic Matching</h4>
+                            <p class="font-mono text-xs mt-2">Right creators for your brand goals</p>
+                        </div>
+                        <div class="bg-brutal-pink text-brutal-black border-4 border-brutal-black p-6 shadow-brutal transform rotate-2 hover:rotate-0 transition-transform mt-8">
+                            <span class="text-3xl mb-2 block">📊</span>
+                            <h4 class="font-syne font-bold text-lg">Full Reporting</h4>
+                            <p class="font-mono text-xs mt-2">Numbers your CMO can use</p>
+                        </div>
+                        <div class="bg-brutal-blue text-brutal-black border-4 border-brutal-black p-6 shadow-brutal transform rotate-1 hover:rotate-0 transition-transform">
+                            <span class="text-3xl mb-2 block">🛡️</span>
+                            <h4 class="font-syne font-bold text-lg">Brand Safe</h4>
+                            <p class="font-mono text-xs mt-2">Vetted creators, clear contracts</p>
+                        </div>
+                        <div class="bg-brutal-green text-brutal-black border-4 border-brutal-black p-6 shadow-brutal transform -rotate-1 hover:rotate-0 transition-transform mt-8">
+                            <span class="text-3xl mb-2 block">🚀</span>
+                            <h4 class="font-syne font-bold text-lg">End-to-End</h4>
+                            <p class="font-mono text-xs mt-2">Brief to delivery, we handle it</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 reveal-right">
+                    <span class="font-mono text-sm bg-brutal-yellow text-brutal-black px-4 py-2 inline-block mb-6">FOR BRANDS & AGENCIES</span>
+                    <h2 class="font-syne font-extrabold text-4xl md:text-5xl mb-6">
+                        Work with Africa's most <span class="bg-brutal-yellow text-brutal-black px-2">trusted</span> creators
+                    </h2>
+                    <p class="font-mono text-sm mb-8 text-brutal-white/80">
+                        We connect your brand to premium African creators and IP – and manage everything from brief to reporting.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <span class="text-brutal-yellow text-xl">★</span>
+                            <span class="font-mono text-sm">Curated network of vetted creators</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-brutal-yellow text-xl">★</span>
+                            <span class="font-mono text-sm">YouTube-native campaigns that feel like content</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-brutal-yellow text-xl">★</span>
+                            <span class="font-mono text-sm">One contract, one point of contact</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-brutal-yellow text-xl">★</span>
+                            <span class="font-mono text-sm">Performance tracking & brand lift measurement</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-brutal-yellow text-brutal-black px-8 py-4 font-syne font-bold border-4 border-brutal-black shadow-brutal brutal-btn">
+                        Brief Our Team →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Content Motley -->
+    <section id="services" class="py-20 md:py-32 bg-brutal-black text-brutal-white relative">
+        <!-- Decorative grid -->
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(#FAFAFA 1px, transparent 1px), linear-gradient(90deg, #FAFAFA 1px, transparent 1px); background-size: 60px 60px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-yellow text-brutal-black px-4 py-2 inline-block mb-4">WHY US</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    Why top creators choose
+                    <span class="text-brutal-yellow">Content Motley</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 stagger-children">
+                <!-- Pillar 1 -->
+                <div class="bg-brutal-yellow text-brutal-black border-4 border-brutal-white p-8 shadow-brutal-lg reveal-left">
+                    <span class="font-mono text-6xl font-bold opacity-30">01</span>
+                    <h3 class="font-syne font-bold text-2xl mt-4 mb-4">Platform-level Expertise</h3>
+                    <p class="font-mono text-sm">
+                        Our founder led YouTube Content Partnerships in Sub-Saharan Africa, driving <strong>1B+ monthly views</strong>, +21% DAU and <strong>doubled revenue</strong> for top partners.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-brutal-pink text-brutal-black border-4 border-brutal-white p-8 shadow-brutal-lg reveal-right">
+                    <span class="font-mono text-6xl font-bold opacity-30">02</span>
+                    <h3 class="font-syne font-bold text-2xl mt-4 mb-4">Proven Media Track Record</h3>
+                    <p class="font-mono text-sm">
+                        We've commissioned <strong>120+ films and 30+ series</strong> at Multichoice, and transformed MTV Base Africa into the <strong>#1 music channel</strong>.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-brutal-blue text-brutal-black border-4 border-brutal-white p-8 shadow-brutal-lg reveal-left">
+                    <span class="font-mono text-6xl font-bold opacity-30">03</span>
+                    <h3 class="font-syne font-bold text-2xl mt-4 mb-4">Full-stack Channel Management</h3>
+                    <p class="font-mono text-sm">
+                        We handle <strong>strategy, SEO, thumbnails, programming, monetization, rights and reporting</strong> – so your content works harder without you burning out.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-brutal-green text-brutal-black border-4 border-brutal-white p-8 shadow-brutal-lg reveal-right">
+                    <span class="font-mono text-6xl font-bold opacity-30">04</span>
+                    <h3 class="font-syne font-bold text-2xl mt-4 mb-4">Africa to the World</h3>
+                    <p class="font-mono text-sm">
+                        We specialise in African stories with <strong>global potential</strong>, helping you grow in Africa, the UK, US, Europe and the wider diaspora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="gallery" class="py-20 md:py-32 bg-gradient-to-br from-brutal-orange via-brutal-pink to-brutal-purple relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-black text-brutal-yellow px-4 py-2 inline-block mb-4">PORTFOLIO</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl text-brutal-black">
+                    Creator <span class="bg-brutal-black text-brutal-white px-3">Showcase</span>
+                </h2>
+                <p class="font-mono text-sm mt-4 max-w-2xl mx-auto">
+                    A glimpse into some creators and content we've helped grow across Africa and beyond.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 stagger-children">
+                <!-- Gallery Item 1 - Large Featured Video -->
+                <div class="col-span-2 row-span-2 gallery-item">
+                    <div class="bg-brutal-black border-4 border-brutal-black shadow-brutal h-full relative overflow-hidden group">
+                        <div class="aspect-square md:aspect-auto md:h-full relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/OQQaDqLCgKg?start=92&autoplay=0&mute=1&loop=1&playlist=OQQaDqLCgKg&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                            <!-- Overlay with title -->
+                            <div class="absolute top-4 left-4 z-10">
+                                <span class="bg-brutal-yellow text-brutal-black font-syne font-bold px-4 py-2 text-lg border-2 border-brutal-black">FEATURED</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-brutal-yellow p-4 border-t-4 border-brutal-black">
+                                <span class="font-syne font-bold">Omoni Oboli TV</span>
+                                <span class="font-mono text-xs block">Highest Watched Nollywood Movie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 - Podcast -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-yellow border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/4245nj9yjIs?mute=1&loop=1&playlist=4245nj9yjIs&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-yellow border-t-4 border-brutal-black">
+                            <span class="font-mono text-xs">Isbae U</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 - Comedy -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-blue border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/cEIydT1IQyo?mute=1&loop=1&playlist=cEIydT1IQyo&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-blue border-t-4 border-brutal-black">
+                            <span class="font-mono text-xs">Broda Shaggi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 - Film -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-green border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/2SgtAvc1HV8?mute=1&loop=1&playlist=2SgtAvc1HV8&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-green border-t-4 border-brutal-black">
+                            <span class="font-mono text-xs">Emmabel TV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 - Lifestyle -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-pink border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/GaG3xEF5Cfk?mute=1&loop=1&playlist=GaG3xEF5Cfk&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-pink border-t-4 border-brutal-black">
+                            <span class="font-mono text-xs">Diary of a Naija Girl</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 - Wide -->
+                <div class="col-span-2 gallery-item">
+                    <div class="bg-brutal-purple border-4 border-brutal-black shadow-brutal overflow-hidden group cursor-pointer">
+                        <div class="aspect-video bg-gradient-to-br from-brutal-yellow to-brutal-orange flex items-center justify-center relative">
+                            <div class="text-center">
+                                <span class="font-syne font-bold text-3xl md:text-4xl text-brutal-black">BRAND CAMPAIGNS</span>
+                                <p class="font-mono text-xs mt-2 text-brutal-black/70">Creator x Brand Collaborations</p>
+                            </div>
+                            <div class="absolute inset-0 bg-brutal-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <div class="play-btn relative w-16 h-16 bg-brutal-yellow rounded-full flex items-center justify-center">
+                                    <span class="text-2xl ml-1">▶</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-brutal-purple border-t-4 border-brutal-black text-brutal-white">
+                            <span class="font-syne font-bold">Success Stories Reel</span>
+                            <span class="font-mono text-xs block opacity-70">Campaign Highlights 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 - Sports -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-orange border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/k93tb6pQce0?mute=1&loop=1&playlist=k93tb6pQce0&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-orange border-t-4 border-brutal-black">
+                            <span class="font-mono text-xs">Layi Wasabi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 - Tech -->
+                <div class="gallery-item">
+                    <div class="bg-brutal-red border-4 border-brutal-black shadow-brutal overflow-hidden group">
+                        <div class="aspect-square relative">
+                            <iframe 
+                                src="https://www.youtube.com/embed/ScAcee_5Q4A?mute=1&loop=1&playlist=ScAcee_5Q4A&rel=0&modestbranding=1"
+                                class="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <div class="p-3 bg-brutal-red border-t-4 border-brutal-black text-brutal-white">
+                            <span class="font-mono text-xs">Royal Arts TV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View all button -->
+            <div class="text-center mt-12 reveal">
+                <a href="#contact" class="inline-block bg-brutal-black text-brutal-yellow px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-black shadow-brutal-lg brutal-btn">
+                    See Full Portfolio →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 md:py-32 bg-brutal-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-purple text-brutal-white px-4 py-2 inline-block mb-4">THE PROCESS</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    How we <span class="bg-brutal-green px-3">work</span>
+                </h2>
+            </div>
+
+            <div class="relative">
+                <!-- Connection line -->
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-2 bg-brutal-black transform -translate-y-1/2"></div>
+
+                <div class="grid md:grid-cols-4 gap-8 stagger-children relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brutal-yellow border-4 border-brutal-black mx-auto mb-6 flex items-center justify-center shadow-brutal">
+                            <span class="font-syne font-extrabold text-3xl">1</span>
+                        </div>
+                        <h3 class="font-syne font-bold text-xl mb-2">Discovery Call</h3>
+                        <p class="font-mono text-sm">We unpack your goals, content and audience</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brutal-pink border-4 border-brutal-black mx-auto mb-6 flex items-center justify-center shadow-brutal">
+                            <span class="font-syne font-extrabold text-3xl">2</span>
+                        </div>
+                        <h3 class="font-syne font-bold text-xl mb-2">Channel Audit</h3>
+                        <p class="font-mono text-sm">Deep dive into analytics, SEO & monetization</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brutal-blue border-4 border-brutal-black mx-auto mb-6 flex items-center justify-center shadow-brutal">
+                            <span class="font-syne font-extrabold text-3xl">3</span>
+                        </div>
+                        <h3 class="font-syne font-bold text-xl mb-2">Onboarding</h3>
+                        <p class="font-mono text-sm">Set up workflows, tools & communication</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brutal-green border-4 border-brutal-black mx-auto mb-6 flex items-center justify-center shadow-brutal">
+                            <span class="font-syne font-extrabold text-3xl">4</span>
+                        </div>
+                        <h3 class="font-syne font-bold text-xl mb-2">Always-On</h3>
+                        <p class="font-mono text-sm">Optimise, report & refine while you create</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="py-20 md:py-32 bg-brutal-black text-brutal-white relative overflow-hidden">
+        <!-- Rotating badge -->
+        <div class="absolute top-10 right-10 w-32 h-32 spin-slow hidden md:block">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                </defs>
+                <text fill="#FFDE59" font-family="Space Mono" font-size="8">
+                    <textPath href="#circle">★ YOUTUBE INSIDER ★ MEDIA VETERAN ★ </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <span class="font-mono text-sm bg-brutal-yellow text-brutal-black px-4 py-2 inline-block mb-6">LEADERSHIP</span>
+                    <h2 class="font-syne font-extrabold text-4xl md:text-5xl mb-6">
+                        Led by a creator economy
+                        <span class="text-brutal-yellow">veteran</span>
+                    </h2>
+                    <p class="font-mono text-sm mb-6 opacity-80">
+                        Content Motley is led by <strong class="text-brutal-yellow">Sholz S. Laelle</strong>, an MBA-trained executive with 16+ years building content, streaming and creator businesses for Google/YouTube, Paramount, Multichoice and African Magic.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="text-brutal-yellow text-2xl">▸</span>
+                            <p class="font-mono text-sm">Ex-Head of YouTube Content Partnerships, Sub-Saharan Africa</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-brutal-pink text-2xl">▸</span>
+                            <p class="font-mono text-sm">Ex-Director of Content & Editorial Strategy, Paramount Africa</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-brutal-blue text-2xl">▸</span>
+                            <p class="font-mono text-sm">Former Head of Commissioned Content at Africa Magic</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-brutal-green text-2xl">▸</span>
+                            <p class="font-mono text-sm">CEO of Circo Live – 0 → 100k users in 3 months</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="relative">
+                        <!-- Founder Photo -->
+                        <div class="bg-brutal-yellow border-4 border-brutal-white p-4 shadow-brutal-xl transform rotate-3">
+                            <div class="aspect-square overflow-hidden">
+                                <img 
+                                    src="images/sholz-laelle.jpg" 
+                                    alt="Sholz S. Laelle - Founder of Content Motley"
+                                    class="w-full h-full object-cover object-top"
+                                >
+                            </div>
+                        </div>
+                        
+                        <!-- Achievement badges -->
+                        <div class="absolute -top-4 -right-4 bg-brutal-green border-4 border-brutal-black p-3 shadow-brutal transform -rotate-6">
+                            <span class="font-syne font-bold text-lg">5×</span>
+                            <span class="font-mono text-xs block">Awards</span>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-brutal-pink border-4 border-brutal-black p-3 shadow-brutal transform rotate-6">
+                            <span class="font-syne font-bold text-lg">$30M</span>
+                            <span class="font-mono text-xs block">P&L Managed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 md:py-32 bg-brutal-yellow relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-black text-brutal-yellow px-4 py-2 inline-block mb-4">RESULTS</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    Proven reach. <span class="bg-brutal-black text-brutal-yellow px-3">Real</span> results.
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 stagger-children overflow-visible">
+                <div class="bg-brutal-black text-brutal-yellow border-4 border-brutal-black p-8 text-center shadow-brutal-lg tilt-card">
+                    <span class="font-syne font-extrabold text-4xl md:text-5xl whitespace-nowrap">100M+</span>
+                    <span class="font-mono text-sm block mt-2">Monthly Views</span>
+                </div>
+                <div class="bg-brutal-pink border-4 border-brutal-black p-8 text-center shadow-brutal-lg tilt-card">
+                    <span class="font-syne font-extrabold text-4xl md:text-5xl">70+</span>
+                    <span class="font-mono text-sm block mt-2">Channels Managed</span>
+                </div>
+                <div class="bg-brutal-blue border-4 border-brutal-black p-8 text-center shadow-brutal-lg tilt-card">
+                    <span class="font-syne font-extrabold text-4xl md:text-5xl">150+</span>
+                    <span class="font-mono text-sm block mt-2">TV / Series</span>
+                </div>
+                <div class="bg-brutal-green border-4 border-brutal-black p-8 text-center shadow-brutal-lg tilt-card">
+                    <span class="font-syne font-extrabold text-4xl md:text-5xl">13+</span>
+                    <span class="font-mono text-xs block mt-2">Channels with 1M+ Subs</span>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="mt-16 reveal">
+                <div class="bg-brutal-white border-4 border-brutal-black p-8 md:p-12 shadow-brutal-xl max-w-4xl mx-auto relative">
+                    <span class="absolute -top-6 -left-6 text-8xl text-brutal-black opacity-20 font-syne">"</span>
+                    <blockquote class="font-syne text-xl md:text-2xl mb-6">
+                        "Content Motley transformed how we think about our catalogue. What was sitting idle is now generating consistent monthly revenue."
+                    </blockquote>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brutal-purple border-2 border-brutal-black"></div>
+                        <div>
+                            <span class="font-syne font-bold">Media Partner</span>
+                            <span class="font-mono text-sm block">Nigeria-based Production Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 md:py-32 bg-brutal-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brutal-yellow/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brutal-pink/30 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-black text-brutal-yellow px-4 py-2 inline-block mb-4">TESTIMONIALS</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    What our <span class="bg-brutal-purple text-brutal-white px-3">partners</span> say
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 stagger-children">
+                <!-- Testimonial 1 -->
+                <div class="bg-brutal-yellow border-4 border-brutal-black p-8 shadow-brutal relative reveal">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-brutal-black text-brutal-yellow flex items-center justify-center text-3xl font-syne">"</div>
+                    <p class="font-mono text-sm mb-6 mt-4">
+                        Content Motley transformed how we think about our catalogue. What was sitting idle is now generating consistent monthly revenue.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brutal-purple border-2 border-brutal-black"></div>
+                        <div>
+                            <p class="font-syne font-bold">Media Partner</p>
+                            <p class="font-mono text-xs text-brutal-black/60">Film Production Company</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brutal-blue border-4 border-brutal-black p-8 shadow-brutal relative reveal md:translate-y-8">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-brutal-black text-brutal-blue flex items-center justify-center text-3xl font-syne">"</div>
+                    <p class="font-mono text-sm mb-6 mt-4">
+                        Finally, a team that understands YouTube AND African content. My channel grew 3x in 6 months with their strategy.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brutal-pink border-2 border-brutal-black"></div>
+                        <div>
+                            <p class="font-syne font-bold">Content Creator</p>
+                            <p class="font-mono text-xs text-brutal-black/60">Lifestyle & Entertainment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brutal-green border-4 border-brutal-black p-8 shadow-brutal relative reveal">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-brutal-black text-brutal-green flex items-center justify-center text-3xl font-syne">"</div>
+                    <p class="font-mono text-sm mb-6 mt-4">
+                        The brand partnerships they've brokered for us have been game-changing. Professional, clear terms, real results.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brutal-orange border-2 border-brutal-black"></div>
+                        <div>
+                            <p class="font-syne font-bold">YouTube Creator</p>
+                            <p class="font-mono text-xs text-brutal-black/60">Comedy & Skits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 md:py-32 bg-brutal-black text-brutal-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-sm bg-brutal-yellow text-brutal-black px-4 py-2 inline-block mb-4">FAQ</span>
+                <h2 class="font-syne font-extrabold text-4xl md:text-6xl">
+                    Frequently Asked <span class="text-brutal-yellow">Questions</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4 stagger-children">
+                <!-- FAQ Item 1 -->
+                <div class="border-4 border-brutal-white bg-brutal-black reveal">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center font-syne font-bold text-lg hover:bg-brutal-yellow hover:text-brutal-black transition-colors">
+                        <span>Who do you work with?</span>
+                        <span class="text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="font-mono text-sm text-brutal-white/80">
+                            We work with established YouTube creators, filmmakers, media companies and content owners who have existing traction and want to build a sustainable business. We also work with brands and agencies looking to partner with African creators.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border-4 border-brutal-white bg-brutal-black reveal">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center font-syne font-bold text-lg hover:bg-brutal-pink hover:text-brutal-black transition-colors">
+                        <span>Do I need to be based in Africa?</span>
+                        <span class="text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="font-mono text-sm text-brutal-white/80">
+                            No. We work with creators and content owners globally who create content for African audiences or the African diaspora. Our network spans Africa, UK, US, Europe and beyond.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border-4 border-brutal-white bg-brutal-black reveal">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center font-syne font-bold text-lg hover:bg-brutal-blue hover:text-brutal-black transition-colors">
+                        <span>How is Content Motley different from an MCN?</span>
+                        <span class="text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="font-mono text-sm text-brutal-white/80">
+                            We're a Creator Service Provider (CSP), not a traditional MCN. We offer hands-on strategy, management and monetization support with transparent terms. We treat your channel like a media business, not just a line item in a network.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border-4 border-brutal-white bg-brutal-black reveal">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center font-syne font-bold text-lg hover:bg-brutal-green hover:text-brutal-black transition-colors">
+                        <span>How long before I see results?</span>
+                        <span class="text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="font-mono text-sm text-brutal-white/80">
+                            Quick wins like thumbnail improvements and metadata optimization can show results within weeks. Bigger shifts in audience growth and revenue typically build over 3-6 months. We focus on long-term, compounding growth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border-4 border-brutal-white bg-brutal-black reveal">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center font-syne font-bold text-lg hover:bg-brutal-orange hover:text-brutal-black transition-colors">
+                        <span>How do I get started?</span>
+                        <span class="text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="font-mono text-sm text-brutal-white/80">
+                            Click "Apply to Join" and share your channel details. We'll review your application, and if we see a fit, we'll schedule a discovery call to discuss your goals and how we can help.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 md:py-32 bg-gradient-to-br from-brutal-purple via-brutal-pink to-brutal-orange relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-10 left-10 w-20 h-20 border-4 border-brutal-black rotate-12 float"></div>
+            <div class="absolute bottom-10 right-10 w-32 h-32 border-4 border-brutal-black -rotate-12 float float-delay-2"></div>
+            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-brutal-yellow border-4 border-brutal-black float float-delay-1"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Left side - Text -->
+                <div class="text-center md:text-left reveal">
+                    <h2 class="font-syne font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6">
+                        Ready to run your channel like a
+                        <span class="bg-brutal-black text-brutal-yellow px-4 inline-block transform -rotate-1">business?</span>
+                    </h2>
+                    <p class="font-mono text-lg mb-8">
+                        If you're serious about turning your content into a scalable, global business, we'd love to hear from you.
+                    </p>
+
+                    <!-- Contact info -->
+                    <div class="space-y-4 font-mono text-sm">
+                        <a href="mailto:info@creativemotley.com" class="flex items-center gap-3 hover:underline justify-center md:justify-start">
+                            <span class="w-10 h-10 bg-brutal-black text-brutal-yellow flex items-center justify-center text-lg">✉</span>
+                            info@creativemotley.com
+                        </a>
+                        <a href="https://wa.me/447460583191" target="_blank" class="flex items-center gap-3 hover:underline justify-center md:justify-start">
+                            <span class="w-10 h-10 bg-brutal-green text-brutal-black flex items-center justify-center text-lg">💬</span>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right side - Form -->
+                <div class="reveal-right">
+                    <form 
+                        action="https://formspree.io/f/mvgjrvbo" 
+                        method="POST"
+                        class="bg-brutal-black border-4 border-brutal-black p-8 shadow-brutal-xl"
+                        id="contactForm"
+                    >
+                        <h3 class="font-syne font-bold text-2xl text-brutal-yellow mb-6">Get in Touch</h3>
+                        
+                        <!-- Name -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Your Name *</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="John Doe"
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Email Address *</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="john@example.com"
+                            >
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Phone / WhatsApp</label>
+                            <input 
+                                type="tel" 
+                                name="phone"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="+234 800 000 0000"
+                            >
+                        </div>
+
+                        <!-- Type -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">I am a... *</label>
+                            <select 
+                                name="type" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors cursor-pointer"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="Creator">Creator / YouTuber</option>
+                                <option value="Media Owner">Media Owner / Filmmaker</option>
+                                <option value="Brand">Brand / Agency</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-6">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Your Message *</label>
+                            <textarea 
+                                name="message" 
+                                required
+                                rows="4"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors resize-none"
+                                placeholder="Tell us about your channel, goals, or how we can help..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Channel Link -->
+                        <div class="mb-6">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">YouTube Channel Link</label>
+                            <input 
+                                type="url" 
+                                name="channel_link"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="https://youtube.com/@yourchannel"
+                            >
+                        </div>
+
+                        <!-- Submit -->
+                        <button 
+                            type="submit"
+                            class="w-full bg-brutal-yellow text-brutal-black px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-yellow hover:bg-brutal-white hover:border-brutal-white transition-colors shadow-brutal"
+                        >
+                            Send Message →
+                        </button>
+
+                        <p class="font-mono text-xs text-brutal-white/60 mt-4 text-center">
+                            We typically respond within 24-48 hours.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brutal-black text-brutal-white py-12 border-t-4 border-brutal-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <a href="#hero" class="font-syne font-extrabold text-2xl flex items-center gap-2 mb-4">
+                        <span class="bg-brutal-yellow text-brutal-black px-2 py-1">CONTENT</span>
+                        <span>MOTLEY</span>
+                    </a>
+                    <p class="font-mono text-sm opacity-70 max-w-sm">
+                        Africa's creator service provider – helping creators, filmmakers and media brands turn views into long-term revenue.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-syne font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><a href="#about" class="hover:text-brutal-yellow transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-brutal-yellow transition-colors">Services</a></li>
+                        <li><a href="#creators" class="hover:text-brutal-yellow transition-colors">Creators</a></li>
+                        <li><a href="#brands" class="hover:text-brutal-yellow transition-colors">Brands</a></li>
+                        <li><a href="#gallery" class="hover:text-brutal-yellow transition-colors">Gallery</a></li>
+                        <li><a href="#results" class="hover:text-brutal-yellow transition-colors">Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-syne font-bold text-lg mb-4">Connect</h4>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><a href="mailto:info@creativemotley.com" class="hover:text-brutal-yellow transition-colors">Email Us</a></li>
+                        <li><a href="https://wa.me/447460583191" class="hover:text-brutal-yellow transition-colors">WhatsApp</a></li>
+                        <li><a href="#" class="hover:text-brutal-yellow transition-colors">YouTube</a></li>
+                        <li><a href="#" class="hover:text-brutal-yellow transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t-2 border-brutal-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-mono text-xs opacity-50">
+                    © 2026 Content Motley. All rights reserved.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-brutal-yellow text-brutal-black flex items-center justify-center border-2 border-brutal-yellow hover:bg-transparent hover:text-brutal-yellow transition-colors">
+                        YT
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-brutal-pink text-brutal-black flex items-center justify-center border-2 border-brutal-pink hover:bg-transparent hover:text-brutal-pink transition-colors">
+                        IG
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-brutal-blue text-brutal-black flex items-center justify-center border-2 border-brutal-blue hover:bg-transparent hover:text-brutal-blue transition-colors">
+                        LI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuBtn.innerHTML = mobileMenu.classList.contains('active') 
+                ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>'
+                : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+            });
+        });
+
+        // Scroll reveal animations
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const floatElements = document.querySelectorAll('.float');
+            
+            floatElements.forEach((el, index) => {
+                const speed = 0.05 * (index + 1);
+                el.style.transform = `translateY(${scrolled * speed}px) rotate(${(index % 2 === 0 ? 1 : -1) * 12}deg)`;
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = Math.floor(start + (target - start) * easeOutQuart);
+                
+                element.textContent = current.toLocaleString() + '+';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        // Trigger counter animation when visible
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add click ripple effect to buttons
+        document.querySelectorAll('.brutal-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.style.cssText = `
+                    position: absolute;
+                    background: rgba(255,255,255,0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
