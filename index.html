@@ -1492,19 +1492,24 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // Clear hash from URL after page loads (keeps URL clean)
-        window.addEventListener('load', function() {
+        // Clear hash from URL immediately and after page loads (keeps URL clean)
+        function clearHash() {
             if (window.location.hash) {
-                const target = document.querySelector(window.location.hash);
-                if (target) {
-                    setTimeout(() => {
-                        history.replaceState(null, null, window.location.pathname);
-                    }, 100);
-                }
+                history.replaceState(null, null, window.location.pathname);
             }
-        });
+        }
+        
+        // Clear hash on page load (for links from other pages like blog)
+        if (window.location.hash) {
+            const hash = window.location.hash;
+            const target = document.querySelector(hash);
+            if (target) {
+                // Let browser scroll to target first, then clear hash
+                setTimeout(clearHash, 50);
+            }
+        }
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links (same page)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1515,6 +1520,7 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Don't update URL - keep it clean
                 }
             });
         });
