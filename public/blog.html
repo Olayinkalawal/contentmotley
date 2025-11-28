@@ -80,11 +80,11 @@
             visibility: visible;
         }
         .modal-content {
-            transform: scale(0.9) translateY(20px);
-            transition: all 0.3s ease;
+            transform: translateY(50px);
+            transition: transform 0.3s ease;
         }
         .modal-overlay.active .modal-content {
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
         }
         .article-content h3 {
             font-family: 'Syne', sans-serif;
@@ -99,19 +99,16 @@
             line-height: 1.8;
         }
         .article-content ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        .article-content ul li {
+            margin-bottom: 1rem;
             padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 0.5rem;
         }
-        .article-content ul li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
+        .article-content li {
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+        .article-content a {
             color: #facc15;
+            text-decoration: underline;
         }
         .article-content strong {
             color: #facc15;
@@ -136,7 +133,7 @@
                     <span class="bg-brutal-black text-brutal-yellow px-2 py-1">CONTENT</span>
                     <span>MOTLEY</span>
                 </a>
-
+                
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center gap-3 font-mono text-sm">
                     <a href="index.html#about" class="hover:bg-brutal-black hover:text-brutal-yellow px-2 py-2 transition-colors border-2 border-transparent hover:border-brutal-black">About</a>
@@ -187,13 +184,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <span class="inline-block bg-brutal-black text-brutal-yellow px-4 py-2 font-mono text-sm mb-6 border-4 border-brutal-black">
-                    📚 BLOG & RESOURCES
+                    📚 BLOG & INSIGHTS
                 </span>
                 <h1 class="font-syne font-extrabold text-4xl md:text-6xl lg:text-7xl text-brutal-white mb-6">
-                    Creator <span class="bg-brutal-yellow text-brutal-black px-2">Knowledge</span> Hub
+                    Creator <span class="bg-brutal-yellow text-brutal-black px-2">Insights</span>
                 </h1>
                 <p class="font-mono text-lg md:text-xl text-brutal-white/90 max-w-2xl mx-auto">
-                    Expert insights on YouTube growth, monetization strategies, and building sustainable media businesses in Africa and beyond.
+                    Expert strategies on YouTube growth, monetization, and building sustainable media businesses in Africa.
                 </p>
             </div>
         </div>
@@ -206,140 +203,68 @@
             <!-- Featured Post -->
             <div class="mb-16">
                 <span class="inline-block bg-brutal-yellow px-3 py-1 font-mono text-xs font-bold mb-4 border-2 border-brutal-black">FEATURED</span>
-                <div onclick="openArticle('monetization')" class="block bg-brutal-cyan border-4 border-brutal-black p-8 shadow-brutal-lg blog-card">
+                <div onclick="openArticle('youtube-africa')" class="block bg-brutal-cyan border-4 border-brutal-black p-8 shadow-brutal-lg blog-card">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <div class="flex gap-2 mb-4">
-                                <span class="bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs">MONETIZATION</span>
-                                <span class="bg-brutal-white text-brutal-black px-2 py-1 font-mono text-xs border-2 border-brutal-black">10 MIN READ</span>
+                                <span class="bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs">STRATEGY</span>
+                                <span class="bg-brutal-white text-brutal-black px-2 py-1 font-mono text-xs border-2 border-brutal-black">15 MIN READ</span>
                             </div>
                             <h2 class="font-syne font-extrabold text-2xl md:text-4xl mb-4">
-                                The Complete Guide to YouTube Monetization in Africa (2024)
+                                Why YouTube Is Still the Best Bet for African Creators in 2025
                             </h2>
                             <p class="font-mono text-sm mb-4">
-                                Everything you need to know about earning money on YouTube as an African creator – from AdSense to brand deals, memberships to merchandise.
+                                TikTok, Reels, Shorts – options feel endless. But when it comes to building a long-term, exportable media business, YouTube still sits at the centre of the strategy.
                             </p>
                             <div class="flex items-center gap-4">
                                 <span class="font-mono text-xs">By Sholz S. Laelle</span>
                                 <span class="font-mono text-xs">•</span>
-                                <span class="font-mono text-xs">November 2024</span>
+                                <span class="font-mono text-xs">January 2025</span>
                             </div>
                         </div>
                         <div class="bg-brutal-yellow border-4 border-brutal-black p-4 aspect-video flex items-center justify-center">
-                            <span class="font-syne font-bold text-6xl">💰</span>
+                            <span class="font-syne font-bold text-6xl">🌍</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Posts Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Post 1 -->
-                <div onclick="openArticle('thumbnails')" class="bg-brutal-yellow border-4 border-brutal-black p-6 shadow-brutal blog-card">
-                    <div class="bg-brutal-black text-brutal-yellow p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
-                        <span class="font-syne font-bold text-5xl">🎨</span>
-                    </div>
-                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">GROWTH</span>
-                    <h3 class="font-syne font-bold text-xl mb-2">
-                        Thumbnail Psychology: Why Some Videos Get Clicked
-                    </h3>
-                    <p class="font-mono text-xs text-brutal-black/70 mb-4">
-                        The science behind thumbnails that convert browsers into viewers.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">5 min read</span>
-                        <span class="font-mono text-xs">Nov 2024</span>
-                    </div>
-                </div>
-
-                <!-- Post 2 -->
-                <div onclick="openArticle('nollywood')" class="bg-brutal-pink border-4 border-brutal-black p-6 shadow-brutal blog-card">
+                <!-- Post 2 - Nollywood -->
+                <div onclick="openArticle('nollywood-youtube')" class="bg-brutal-pink border-4 border-brutal-black p-6 shadow-brutal blog-card">
                     <div class="bg-brutal-white p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
                         <span class="font-syne font-bold text-5xl">🎬</span>
                     </div>
-                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">MEDIA OWNERS</span>
+                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">NOLLYWOOD</span>
                     <h3 class="font-syne font-bold text-xl mb-2">
-                        How Nollywood Studios Can Win on YouTube
+                        Nollywood's YouTube Era: How Filmmakers Are Winning as Netflix and Amazon Pull Back
                     </h3>
                     <p class="font-mono text-xs text-brutal-black/70 mb-4">
-                        Turn your film catalogue into a recurring revenue stream.
+                        Global streamers are recalibrating. YouTube has quietly become Nollywood's most reliable stage.
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">8 min read</span>
-                        <span class="font-mono text-xs">Nov 2024</span>
+                        <span class="font-mono text-xs">12 min read</span>
+                        <span class="font-mono text-xs">Jan 2025</span>
                     </div>
                 </div>
 
-                <!-- Post 3 -->
-                <div onclick="openArticle('branddeals')" class="bg-brutal-green border-4 border-brutal-black p-6 shadow-brutal blog-card">
-                    <div class="bg-brutal-purple p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
-                        <span class="font-syne font-bold text-5xl">🤝</span>
+                <!-- Coming Soon Card -->
+                <div class="bg-brutal-yellow border-4 border-brutal-black p-6 shadow-brutal opacity-70">
+                    <div class="bg-brutal-black p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
+                        <span class="font-syne font-bold text-5xl text-brutal-yellow">📝</span>
                     </div>
-                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">MONETIZATION</span>
+                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">COMING SOON</span>
                     <h3 class="font-syne font-bold text-xl mb-2">
-                        How to Negotiate Brand Deals (Without Underselling)
+                        More Insights Coming Soon
                     </h3>
                     <p class="font-mono text-xs text-brutal-black/70 mb-4">
-                        Know your worth and get paid what you deserve.
+                        We're working on more deep-dive articles on monetization, brand deals, SEO, and creator strategy.
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">6 min read</span>
-                        <span class="font-mono text-xs">Oct 2024</span>
-                    </div>
-                </div>
-
-                <!-- Post 4 -->
-                <div onclick="openArticle('seo')" class="bg-brutal-orange border-4 border-brutal-black p-6 shadow-brutal blog-card">
-                    <div class="bg-brutal-cyan p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
-                        <span class="font-syne font-bold text-5xl">🔍</span>
-                    </div>
-                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">SEO</span>
-                    <h3 class="font-syne font-bold text-xl mb-2">
-                        YouTube SEO for African Creators: A Complete Guide
-                    </h3>
-                    <p class="font-mono text-xs text-brutal-black/70 mb-4">
-                        Rank higher and reach more viewers with smart optimization.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">7 min read</span>
-                        <span class="font-mono text-xs">Oct 2024</span>
-                    </div>
-                </div>
-
-                <!-- Post 5 -->
-                <div onclick="openArticle('calendar')" class="bg-brutal-purple border-4 border-brutal-black p-6 shadow-brutal blog-card text-brutal-white">
-                    <div class="bg-brutal-yellow p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
-                        <span class="font-syne font-bold text-5xl">📅</span>
-                    </div>
-                    <span class="inline-block bg-brutal-yellow text-brutal-black px-2 py-1 font-mono text-xs mb-3">STRATEGY</span>
-                    <h3 class="font-syne font-bold text-xl mb-2">
-                        Content Calendars: The Secret to Consistent Growth
-                    </h3>
-                    <p class="font-mono text-xs text-brutal-white/70 mb-4">
-                        How top creators plan content months in advance.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">4 min read</span>
-                        <span class="font-mono text-xs">Oct 2024</span>
-                    </div>
-                </div>
-
-                <!-- Post 6 -->
-                <div onclick="openArticle('mediacompany')" class="bg-brutal-cyan border-4 border-brutal-black p-6 shadow-brutal blog-card">
-                    <div class="bg-brutal-pink p-4 aspect-video flex items-center justify-center mb-4 border-4 border-brutal-black">
-                        <span class="font-syne font-bold text-5xl">🚀</span>
-                    </div>
-                    <span class="inline-block bg-brutal-black text-brutal-white px-2 py-1 font-mono text-xs mb-3">BUSINESS</span>
-                    <h3 class="font-syne font-bold text-xl mb-2">
-                        From Creator to Media Company: Making the Leap
-                    </h3>
-                    <p class="font-mono text-xs text-brutal-black/70 mb-4">
-                        When and how to scale beyond being a solo creator.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-xs">9 min read</span>
-                        <span class="font-mono text-xs">Sep 2024</span>
+                        <span class="font-mono text-xs">Stay tuned</span>
+                        <span class="font-mono text-xs">2025</span>
                     </div>
                 </div>
 
@@ -349,40 +274,33 @@
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="py-20 bg-brutal-black text-brutal-white">
+    <section class="py-20 bg-brutal-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="inline-block bg-brutal-yellow text-brutal-black px-4 py-2 font-mono text-sm mb-6 border-4 border-brutal-yellow">
                 📬 STAY UPDATED
             </span>
-            <h2 class="font-syne font-extrabold text-3xl md:text-5xl mb-6">
-                Get creator insights <span class="text-brutal-yellow">weekly</span>
+            <h2 class="font-syne font-extrabold text-3xl md:text-5xl text-brutal-white mb-6">
+                Get creator insights <span class="text-brutal-yellow">straight to your inbox</span>
             </h2>
-            <p class="font-mono text-brutal-white/70 mb-8 max-w-xl mx-auto">
-                Join 5,000+ creators getting actionable tips on growth, monetization, and building sustainable media businesses.
+            <p class="font-mono text-brutal-white/70 mb-8">
+                Join our community of African creators building sustainable media businesses.
             </p>
-            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                    type="email" 
-                    placeholder="your@email.com"
-                    class="flex-1 bg-brutal-white text-brutal-black px-4 py-4 font-mono border-4 border-brutal-white focus:outline-none focus:border-brutal-yellow"
-                >
-                <button type="submit" class="bg-brutal-yellow text-brutal-black px-6 py-4 font-syne font-bold border-4 border-brutal-yellow shadow-brutal brutal-btn whitespace-nowrap">
-                    Subscribe →
-                </button>
-            </form>
+            <a href="index.html#contact" class="inline-block bg-brutal-yellow text-brutal-black px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-yellow shadow-brutal brutal-btn">
+                Join Content Motley →
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brutal-black text-brutal-white py-12 border-t-4 border-brutal-yellow">
+    <footer class="bg-brutal-black text-brutal-white py-16 border-t-4 border-brutal-yellow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-2">
                     <a href="index.html" class="font-syne font-extrabold text-2xl flex items-center gap-2 mb-4">
                         <span class="bg-brutal-yellow text-brutal-black px-2 py-1">CONTENT</span>
                         <span>MOTLEY</span>
                     </a>
-                    <p class="font-mono text-sm text-brutal-white/70 max-w-sm">
+                    <p class="font-mono text-sm text-brutal-white/70 max-w-md">
                         Africa's creator service provider – helping creators, filmmakers and media brands turn views into long-term revenue.
                     </p>
                 </div>
@@ -439,532 +357,373 @@
     <script>
         // Article content database
         const articles = {
-            monetization: {
-                title: "The Complete Guide to YouTube Monetization in Africa (2024)",
-                category: "MONETIZATION",
-                readTime: "10 min read",
+            'youtube-africa': {
+                title: "Why YouTube Is Still the Best Bet for African Creators in 2025",
+                category: "STRATEGY",
+                readTime: "15 min read",
                 author: "Sholz S. Laelle",
-                date: "November 2024",
-                emoji: "💰",
+                date: "January 2025",
+                emoji: "🌍",
                 color: "brutal-cyan",
                 content: `
-                    <p>For African creators, YouTube represents one of the biggest opportunities to build sustainable income from content. But navigating monetization can be confusing – especially with the unique challenges we face on the continent.</p>
+                    <p>If you're an African creator right now, your options feel endless: TikTok, Instagram Reels, Shorts, Snapchat, even local platforms. But when it comes to building a <strong>long-term, exportable media business</strong>, one platform still sits at the centre of the strategy:</p>
                     
-                    <p>This guide breaks down everything you need to know about making money on YouTube as an African creator in 2024.</p>
+                    <p><strong>YouTube.</strong></p>
                     
-                    <h3>1. YouTube Partner Program (YPP) Requirements</h3>
-                    <p>Before you can earn directly from YouTube, you need to join the YouTube Partner Program. The requirements are:</p>
+                    <p>This isn't nostalgia. It's about ownership, monetisation, discoverability and global reach – the things that matter when you're trying to turn content into a real business, not just a viral moment.</p>
+                    
+                    <p>In this article, we'll break down why YouTube remains the best strategic bet for African creators, what's changing on the continent, and how to actually play the game in 2025.</p>
+                    
+                    <h3>The State of YouTube in Africa (by the numbers)</h3>
+                    <p>Africa's creator economy was estimated at over <strong>$3 billion in 2023</strong>, and YouTube is one of the biggest engines behind that growth.</p>
+                    
+                    <p>A few anchors:</p>
                     <ul>
-                        <li><strong>1,000 subscribers</strong> minimum</li>
-                        <li><strong>4,000 watch hours</strong> in the past 12 months OR <strong>10 million Shorts views</strong> in 90 days</li>
-                        <li>An <strong>AdSense account</strong> linked to your channel</li>
-                        <li>No active <strong>Community Guidelines strikes</strong></li>
-                        <li>Located in a country where YPP is available (most African countries qualify)</li>
+                        <li>In South Africa alone, YouTube's ad reach is over <strong>25 million users</strong>, which is a huge chunk of the country's internet population.</li>
+                        <li>Across the continent, YouTube isn't the largest social platform by raw share (Facebook still dominates), but it consistently ranks in the <strong>top three social platforms</strong> and is the only one purpose-built for long-form video, search and revenue-sharing at scale.</li>
+                        <li>Global YouTube usage has passed <strong>2.6 billion users</strong>, meaning African creators publish into a truly global marketplace, not a local walled garden.</li>
                     </ul>
                     
-                    <h3>2. AdSense Revenue: What to Really Expect</h3>
-                    <p>Let's be honest – CPM (cost per thousand views) for African audiences is lower than US or UK audiences. Typical ranges:</p>
-                    <ul>
-                        <li><strong>Nigeria:</strong> $0.30 - $1.50 CPM</li>
-                        <li><strong>South Africa:</strong> $0.80 - $2.50 CPM</li>
-                        <li><strong>Kenya:</strong> $0.40 - $1.80 CPM</li>
-                        <li><strong>Ghana:</strong> $0.35 - $1.60 CPM</li>
-                    </ul>
-                    <p>But here's the key insight: <strong>diaspora audiences</strong> watching from the UK, US, and Europe can significantly boost your earnings. Content that appeals to Africans abroad can earn 5-10x more per view.</p>
+                    <p>So yes, CPMs in Africa are lower than in the US or Europe – but the combination of scale, search, and multiple monetisation levers makes YouTube uniquely important.</p>
                     
-                    <h3>3. Brand Deals: Where the Real Money Is</h3>
-                    <p>For most successful African creators, brand partnerships generate 60-80% of their income. Here's how to approach them:</p>
+                    <h3>Why YouTube Still Beats Every Other Platform for African Creators</h3>
+                    
+                    <h3>1. Search + Algorithm = Evergreen Discovery</h3>
+                    <p>Instagram, TikTok and others are built around feeds. Once your post slides past, it's gone. YouTube is unique because it's:</p>
                     <ul>
-                        <li><strong>Build your media kit</strong> – Include demographics, engagement rates, and previous brand work</li>
-                        <li><strong>Start local</strong> – Nigerian, Kenyan, South African brands are actively seeking influencers</li>
-                        <li><strong>Know your rates</strong> – A general formula: (Subscribers / 1000) × $10-50 per sponsored video</li>
-                        <li><strong>Negotiate usage rights</strong> – Brands paying for content they can reuse should pay 2-3x more</li>
+                        <li><strong>A search engine</strong> ("best braids for 4C hair", "Lagos vlogs", "Nollywood full movie")</li>
+                        <li><strong>A recommendation engine</strong> (Home + Suggested)</li>
                     </ul>
                     
-                    <h3>4. YouTube Memberships & Super Chat</h3>
-                    <p>These features let your most loyal fans pay monthly or during live streams. They work especially well for:</p>
+                    <p>That means a single, well-packaged video can:</p>
                     <ul>
-                        <li>Lifestyle and entertainment creators</li>
-                        <li>Channels with strong community engagement</li>
-                        <li>Creators who go live regularly</li>
+                        <li>Be discovered months or years later</li>
+                        <li>Keep earning watch time, subscribers and revenue while you're working on something else</li>
                     </ul>
                     
-                    <h3>5. Merchandise & Products</h3>
-                    <p>Selling your own products removes the middleman entirely. Consider:</p>
+                    <p>For African creators juggling jobs, erratic power and data costs, that kind of <strong>evergreen behaviour</strong> is a big deal.</p>
+                    
+                    <h3>2. Real Revenue Sharing and a Proper Monetisation Stack</h3>
+                    <p>YouTube is still the only major platform with a mature, transparent revenue share system available in most African markets.</p>
+                    
+                    <p><strong>Revenue stack you can build on YouTube:</strong></p>
                     <ul>
-                        <li><strong>Digital products</strong> – Presets, templates, courses, ebooks</li>
-                        <li><strong>Physical merch</strong> – Use print-on-demand services to avoid inventory</li>
-                        <li><strong>Services</strong> – Consulting, coaching, workshops</li>
+                        <li><strong>AdSense / Partner Programme</strong> – baseline income from views</li>
+                        <li><strong>Shorts revenue</strong> – smaller but growing and powerful for reach</li>
+                        <li><strong>Channel memberships & Supers</strong> – fans paying directly for extra value</li>
+                        <li><strong>Brand deals & sponsorships</strong> – higher-margin income layered on top</li>
+                        <li><strong>Off-platform conversions</strong> – courses, events, products, Patreon, etc.</li>
                     </ul>
                     
-                    <h3>Key Takeaways</h3>
-                    <p>Monetizing YouTube in Africa requires a <strong>multi-stream approach</strong>. Don't rely on AdSense alone – build brand relationships, create products, and consider your diaspora audience.</p>
+                    <p>Other platforms might be great for reach or virality, but few offer this many native monetisation options in African countries, plus the ability to drive traffic to off-platform offers.</p>
                     
-                    <p>The creators who win are those who treat their channel like a <strong>media business</strong>, not just a hobby. That means tracking metrics, building systems, and constantly improving.</p>
+                    <h3>3. Ownership of Back Catalogue & IP</h3>
+                    <p>YouTube gives you durable URLs, playlists, and channel structures that turn your content into an <strong>asset</strong> rather than a stream of forgotten posts.</p>
                     
-                    <p><strong>Ready to take your monetization to the next level?</strong> Content Motley helps established creators build sustainable revenue streams. Apply to join our network today.</p>
+                    <p>That matters because:</p>
+                    <ul>
+                        <li>Your catalogue becomes <strong>licensable</strong> (brands, broadcasters, platforms)</li>
+                        <li>You can bundle and sell <strong>IP rights</strong>, not just "influence"</li>
+                        <li>A well-organised channel increases your <strong>valuation</strong> if you ever raise money or exit</li>
+                    </ul>
+                    
+                    <p>For African creators operating in markets with weaker IP infrastructure, having a globally recognised platform that tracks and pays out on views is huge.</p>
+                    
+                    <h3>4. Diaspora Reach That Actually Converts</h3>
+                    <p>African stories don't stop at African borders. YouTube's global footprint means:</p>
+                    <ul>
+                        <li>A skincare creator in Nairobi can get brand deals from London.</li>
+                        <li>A Nollywood producer can build a fanbase in Brazil or the Caribbean.</li>
+                        <li>A Ghanaian finance creator can serve audiences in Accra and the UK with the same videos.</li>
+                    </ul>
+                    
+                    <p>Diaspora audiences tend to have <strong>higher purchasing power</strong>, which can offset lower ad rates from local markets when you package and target your content correctly.</p>
+                    
+                    <h3>The Hard Part: Monetisation Reality for African Creators</h3>
+                    <p>The opportunity is big – but it's not automatic.</p>
+                    
+                    <p>A 2024 report estimated Africa's creator industry at <strong>£2.4 billion</strong>, but also highlighted the challenges: lower ad rates, payment barriers and platform restrictions mean creators still struggle to convert attention into sustainable income.</p>
+                    
+                    <p>That's why stacking monetisation and treating your channel like a business is <strong>non-negotiable</strong>.</p>
+                    
+                    <p><strong>Key realities:</strong></p>
+                    <ul>
+                        <li>CPMs are lower in many African markets – you need volume and better packaging.</li>
+                        <li>Brand deals are underpriced if you don't know your numbers or how to negotiate.</li>
+                        <li>Many creators burn out because they try to do everything alone (strategy, scripting, production, packaging, deals, admin).</li>
+                    </ul>
+                    
+                    <p>This is where a proper <strong>Creator Service Provider (CSP)</strong> – like Content Motley – becomes the difference between "talented and tired" and "growing and paid".</p>
+                    
+                    <h3>A 5-Part YouTube Playbook for African Creators</h3>
+                    <p>Here's how to lean into YouTube's strengths in Africa, not fight them.</p>
+                    
+                    <h3>1. Choose a Clear Lane</h3>
+                    <p>You don't have to niche down to one micro-topic, but you do need a clear promise:</p>
+                    <ul>
+                        <li>"Nigerian lifestyle and money for young professionals"</li>
+                        <li>"Urban gospel music stories from Kenya"</li>
+                        <li>"Nollywood romantic comedies with real Lagos chaos"</li>
+                    </ul>
+                    
+                    <p>Clarity makes:</p>
+                    <ul>
+                        <li>Titles easier to write</li>
+                        <li>Brand deals easier to pitch</li>
+                        <li>The algorithm more confident about who to show you to</li>
+                    </ul>
+                    
+                    <h3>2. Design Formats, Not Random Videos</h3>
+                    <p>The creators winning in Africa aren't just uploading; they're building <strong>repeatable formats</strong>:</p>
+                    <ul>
+                        <li>Weekly vlog series</li>
+                        <li>"X vs Y" comparison episodes</li>
+                        <li>Street interview formats</li>
+                        <li>Recurring storytelling shows or mini-dramas</li>
+                    </ul>
+                    
+                    <p>Formats train your audience (and the algorithm) to know what to expect and come back.</p>
+                    
+                    <h3>3. Obsess Over Packaging: Titles, Thumbnails, First 30 Seconds</h3>
+                    <p>On expensive data, nobody wants to waste MBs on something boring.</p>
+                    <ul>
+                        <li>Make your title + thumbnail tell <strong>one clear story</strong> (not three).</li>
+                        <li>Put the payoff or strong hook in the <strong>first 30 seconds</strong>.</li>
+                        <li>Use local language and references and make them understandable to diaspora viewers.</li>
+                    </ul>
+                    
+                    <p>This is where many African creators leave money on the table – the video idea is strong, but the packaging doesn't match.</p>
+                    
+                    <h3>4. Build a Revenue Stack, Not Just AdSense</h3>
+                    <p>Decide early how you'll stack:</p>
+                    <ul>
+                        <li><strong>Baseline:</strong> AdSense + Shorts revenue</li>
+                        <li><strong>Mid-tier:</strong> Brand deals, live reads, dedicated videos</li>
+                        <li><strong>Premium:</strong> Coaching, digital products, events, licensing</li>
+                    </ul>
+                    
+                    <p>Plan content that serves each layer, instead of hoping AdSense will cover everything.</p>
+                    
+                    <h3>5. Partner When You're Ready to Scale</h3>
+                    <p>Once you hit certain thresholds (consistent uploads, growing library, some revenue), doing everything alone becomes a bottleneck.</p>
+                    
+                    <p>That's the moment to look at a Creator Service Provider who can help with:</p>
+                    <ul>
+                        <li>Strategy and programming</li>
+                        <li>SEO and packaging</li>
+                        <li>Monetisation and deals</li>
+                        <li>Rights, Content ID and catalogue management</li>
+                    </ul>
+                    
+                    <p>So you can focus on what only you can do: <strong>make great content and be the talent</strong>.</p>
+                    
+                    <h3>Where Content Motley Fits Into This Picture</h3>
+                    <p>YouTube is still the best bet for African creators – but it now behaves more like a TV network plus streaming service plus social platform than a simple video site.</p>
+                    
+                    <p><strong>Content Motley</strong> exists to help serious creators and media owners:</p>
+                    <ul>
+                        <li>Navigate that complexity</li>
+                        <li>Package African stories for global audiences</li>
+                        <li>Turn channels and catalogues into sustainable businesses</li>
+                    </ul>
+                    
+                    <p>If you're an African creator or Nollywood producer who's ready to treat YouTube like your primary distribution and revenue engine, <strong>this is your moment</strong>.</p>
                 `
             },
-            thumbnails: {
-                title: "Thumbnail Psychology: Why Some Videos Get Clicked",
-                category: "GROWTH",
-                readTime: "5 min read",
-                author: "Content Motley Team",
-                date: "November 2024",
-                emoji: "🎨",
-                color: "brutal-yellow",
-                content: `
-                    <p>Your thumbnail has about <strong>2 seconds</strong> to convince someone to click. In that moment, complex psychological processes determine whether you get a view or get scrolled past.</p>
-                    
-                    <p>Let's break down the science of thumbnails that convert.</p>
-                    
-                    <h3>The Three-Element Rule</h3>
-                    <p>The best thumbnails contain exactly <strong>three key elements</strong> – no more, no less:</p>
-                    <ul>
-                        <li><strong>A face</strong> showing clear emotion</li>
-                        <li><strong>A visual hook</strong> (object, before/after, transformation)</li>
-                        <li><strong>2-4 words</strong> of text (optional but powerful)</li>
-                    </ul>
-                    <p>More than three elements creates visual chaos. Fewer leaves too much ambiguity.</p>
-                    
-                    <h3>Facial Expressions That Work</h3>
-                    <p>Human brains are wired to read faces. Thumbnails with faces get <strong>38% more clicks</strong> on average. But not all expressions are equal:</p>
-                    <ul>
-                        <li><strong>Surprise</strong> (raised eyebrows, open mouth) – Best for discovery content</li>
-                        <li><strong>Curiosity</strong> (squinted eyes, tilted head) – Best for how-to and educational</li>
-                        <li><strong>Joy</strong> (genuine smile, crinkled eyes) – Best for entertainment and lifestyle</li>
-                        <li><strong>Intensity</strong> (direct stare, serious expression) – Best for drama and commentary</li>
-                    </ul>
-                    
-                    <h3>Color Psychology</h3>
-                    <p>Colors trigger emotional responses. Use them strategically:</p>
-                    <ul>
-                        <li><strong>Yellow</strong> – Grabs attention, signals optimism</li>
-                        <li><strong>Red</strong> – Creates urgency, signals importance</li>
-                        <li><strong>Blue</strong> – Builds trust, signals professionalism</li>
-                        <li><strong>Green</strong> – Signals money, growth, or nature</li>
-                    </ul>
-                    <p>Pro tip: Use colors that <strong>contrast</strong> with YouTube's white/red interface. Yellow, cyan, and orange pop on the platform.</p>
-                    
-                    <h3>The Curiosity Gap</h3>
-                    <p>Great thumbnails create a <strong>curiosity gap</strong> – they show enough to intrigue but not enough to satisfy. Techniques include:</p>
-                    <ul>
-                        <li>Blurring or hiding part of the image</li>
-                        <li>Showing a "before" state that implies transformation</li>
-                        <li>Including mysterious objects or numbers</li>
-                        <li>Showing extreme emotions without context</li>
-                    </ul>
-                    
-                    <h3>Testing & Iteration</h3>
-                    <p>Even experts get it wrong sometimes. The key is to <strong>test systematically</strong>:</p>
-                    <ul>
-                        <li>Use YouTube's built-in A/B testing (available to some creators)</li>
-                        <li>Track CTR (click-through rate) in Studio Analytics</li>
-                        <li>Aim for 4-10% CTR on browse features</li>
-                        <li>Update underperforming thumbnails after 48 hours</li>
-                    </ul>
-                    
-                    <h3>Tools We Recommend</h3>
-                    <ul>
-                        <li><strong>Canva</strong> – Easy templates and design</li>
-                        <li><strong>Photoshop</strong> – Professional editing</li>
-                        <li><strong>TubeBuddy</strong> – A/B testing and analytics</li>
-                        <li><strong>Remove.bg</strong> – Quick background removal</li>
-                    </ul>
-                    
-                    <p>Remember: Your thumbnail is a <strong>promise</strong> to the viewer. Make sure your video delivers on that promise, or you'll hurt your retention and algorithm performance.</p>
-                `
-            },
-            nollywood: {
-                title: "How Nollywood Studios Can Win on YouTube",
-                category: "MEDIA OWNERS",
-                readTime: "8 min read",
+            'nollywood-youtube': {
+                title: "Nollywood's YouTube Era: How Filmmakers Are Winning as Netflix and Amazon Pull Back",
+                category: "NOLLYWOOD",
+                readTime: "12 min read",
                 author: "Sholz S. Laelle",
-                date: "November 2024",
+                date: "January 2025",
                 emoji: "🎬",
                 color: "brutal-pink",
                 content: `
-                    <p>Nollywood produces over <strong>2,500 films annually</strong>, making it the world's second-largest film industry by volume. Yet most of this content sits idle after its theatrical or streaming run.</p>
+                    <p>For a few years, it felt like global streamers were the future of Nollywood.</p>
                     
-                    <p>YouTube offers a massive opportunity to turn your catalogue into a <strong>recurring revenue stream</strong>. Here's how to do it right.</p>
+                    <p>Netflix launched splashy Nigerian originals. Amazon Prime Video hired teams on the ground and announced bold content plans. Filmmakers reshaped their pitches around "streaming." Then, almost as quickly as it arrived, that wave started to recede.</p>
                     
-                    <h3>The YouTube Opportunity for Nollywood</h3>
-                    <p>Consider these numbers:</p>
+                    <p>In 2024 and 2025, <strong>Amazon significantly slashed budgets</strong> for African and Middle Eastern originals and laid off staff in the region, while <strong>Netflix quietly scaled back</strong> its Nigerian original commissions.</p>
+                    
+                    <p>The result? A lot of Nigerian filmmakers are now asking a new question:</p>
+                    
+                    <p><strong>If global streamers won't carry Nollywood's next chapter… can YouTube?</strong></p>
+                    
+                    <p>The answer, increasingly, is yes – if you approach it with the right strategy.</p>
+                    
+                    <h3>What Changed with Netflix and Amazon?</h3>
+                    <p>Let's be clear: Netflix hasn't "left" Nigeria, and Amazon Prime Video still exists as a product. But both have:</p>
                     <ul>
-                        <li>Nigeria alone has <strong>30+ million</strong> YouTube users</li>
-                        <li>The African diaspora (UK, US, Europe) actively seeks Nigerian content</li>
-                        <li>Nollywood channels can generate <strong>$5,000 - $50,000/month</strong> with proper strategy</li>
-                        <li>Content you've already made can earn for years to come</li>
+                        <li>Reduced investment in local Nigerian originals</li>
+                        <li>Tightened their commissioning strategies</li>
+                        <li>Shifted focus to markets and formats with clearer profitability</li>
                     </ul>
                     
-                    <h3>Setting Up Your Channel Right</h3>
-                    <p>Common mistakes studios make:</p>
+                    <p>Reports in late 2024 highlighted industry concerns about Netflix scaling back Nigerian originals, while Amazon's earlier downsizing in Africa and the Middle East signalled a similar recalibration.</p>
+                    
+                    <p><strong>For producers, this means:</strong></p>
                     <ul>
-                        <li><strong>Poor organization</strong> – Create playlists by genre, actor, or series</li>
-                        <li><strong>Inconsistent branding</strong> – Use consistent thumbnails and channel art</li>
-                        <li><strong>No upload schedule</strong> – YouTube rewards consistency; upload 2-4 films per week</li>
-                        <li><strong>Ignoring metadata</strong> – Titles, descriptions, and tags matter enormously</li>
+                        <li>Fewer big-budget streamer commissions</li>
+                        <li>More competition for the few slots available</li>
+                        <li>Longer decision cycles and more power on the platform side</li>
                     </ul>
                     
-                    <h3>Content Strategy That Works</h3>
-                    <p>Not all content performs equally on YouTube:</p>
+                    <p>At the same time, audiences haven't stopped wanting Nollywood. If anything, rising economic pressure has made <strong>free-access platforms more attractive</strong>.</p>
+                    
+                    <h3>The Quiet Rise of Nollywood on YouTube</h3>
+                    <p>While streamers debate their African strategy, Nollywood has been quietly <strong>exploding on YouTube</strong>.</p>
+                    
+                    <p>Nigerian filmmakers have started premiering full movies directly on YouTube, often racking up <strong>millions of views within weeks</strong>.</p>
+                    
+                    <p><strong>Omoni Oboli's</strong> romantic comedy "Love in Every Word" is a good example: reports highlight how the film pulled tens of millions of views within months, outperforming many traditional releases and challenging assumptions about what a "YouTube movie" can do.</p>
+                    
+                    <p>Established Nollywood channels like iROKOtv and other producers' channels continue to build substantial subscriber bases and global reach through catalogue uploads, series and digital-first originals.</p>
+                    
+                    <p><strong>Why? Because YouTube solves three problems at once:</strong></p>
                     <ul>
-                        <li><strong>Full movies</strong> – Core content, aim for 90-150 minute films</li>
-                        <li><strong>Series/episodes</strong> – High retention, builds subscribers</li>
-                        <li><strong>Compilations</strong> – "Best of" clips from multiple films</li>
-                        <li><strong>Behind the scenes</strong> – Builds connection with audience</li>
-                        <li><strong>Shorts</strong> – Movie clips under 60 seconds drive discovery</li>
+                        <li><strong>Distribution</strong> – global reach without fighting for limited cinema screens.</li>
+                        <li><strong>Access</strong> – viewers can watch on cheap Android phones with data bundles, no subscription card.</li>
+                        <li><strong>Speed</strong> – filmmakers can get the work out quickly, without lengthy commissioning cycles.</li>
                     </ul>
                     
-                    <h3>Monetization Beyond AdSense</h3>
-                    <p>Smart studios diversify revenue:</p>
+                    <h3>The New Nollywood Distribution Stack</h3>
+                    <p>A lot of producers are shifting from "Netflix or nothing" thinking to a <strong>multi-window, YouTube-driven model</strong>.</p>
+                    
+                    <p>A simplified version of the new stack:</p>
+                    
+                    <p><strong>1. Local theatrical or TV (optional)</strong><br>
+                    Short window to capture premium audiences, if budgets allow.</p>
+                    
+                    <p><strong>2. YouTube release</strong><br>
+                    Either exclusive to the producer's channel or via a specialist partner channel / network that handles packaging, rights and monetisation.</p>
+                    
+                    <p><strong>3. Catalogue play & spin-offs</strong><br>
+                    Compilations, sequels, spin-off series, character-focused content. Short-form clips for Shorts, TikTok and Instagram to drive discovery back to YouTube.</p>
+                    
+                    <p><strong>4. Secondary licensing</strong><br>
+                    Deals with local platforms, airlines, TV networks, AVODs – often using YouTube performance as proof-of-demand.</p>
+                    
+                    <p>Instead of waiting 12–18 months hoping a streamer will say yes, YouTube allows filmmakers to <strong>ship, learn and earn much faster</strong>.</p>
+                    
+                    <h3>Economics: Licence Fee vs YouTube Revenue</h3>
+                    <p>The big pushback is always:</p>
+                    
+                    <p><em>"But a Netflix or Amazon licence fee pays big money up front. Ad revenue feels uncertain."</em></p>
+                    
+                    <p>True. But with streamers scaling back, many filmmakers simply aren't getting those licence fees anymore. The choice is no longer "big cheque vs YouTube"; it's often:</p>
                     <ul>
-                        <li><strong>Channel memberships</strong> – Early access to new releases</li>
-                        <li><strong>Brand integrations</strong> – Product placement and sponsored content</li>
-                        <li><strong>Licensing deals</strong> – International distributors find content on YouTube</li>
-                        <li><strong>Merchandise</strong> – Fan products for popular characters/films</li>
+                        <li>A smaller number of streamer commissions with tight creative control, or</li>
+                        <li>A YouTube-led model where you trade some short-term certainty for <strong>ownership, data and compounding revenue</strong>.</li>
                     </ul>
                     
-                    <h3>Protecting Your Content</h3>
-                    <p>Piracy is a real concern. Protect yourself with:</p>
+                    <p><strong>YouTube economics for Nollywood can look like:</strong></p>
                     <ul>
-                        <li><strong>Content ID</strong> – Claim revenue from unauthorized uploads</li>
-                        <li><strong>Strategic timing</strong> – Release on YouTube after peak theatrical/streaming window</li>
-                        <li><strong>Watermarking</strong> – Subtle but visible branding</li>
-                        <li><strong>Copyright strikes</strong> – Actively monitor and report infringement</li>
+                        <li>Ad revenue from long-form movies and series</li>
+                        <li>Content ID revenue from clips, uploads and compilations across the platform</li>
+                        <li>Brand integrations and sponsorships baked into films or surrounding content</li>
+                        <li>Off-platform monetisation (events, merch, spin-offs, product placement)</li>
                     </ul>
                     
-                    <h3>Case Study: Success Stories</h3>
-                    <p>Channels doing it right:</p>
+                    <p>Is it easy? No. You need:</p>
                     <ul>
-                        <li><strong>Omoni Oboli TV</strong> – Highest watched Nollywood movies on YouTube</li>
-                        <li><strong>Royal Arts TV</strong> – Consistent uploads, strong brand</li>
-                        <li><strong>NollyStars TV</strong> – Excellent SEO and discoverability</li>
+                        <li>Strong packaging (titles, thumbnails, descriptions)</li>
+                        <li>Consistent release schedules</li>
+                        <li>A cataloguing strategy that keeps older films earning</li>
+                        <li>Protection against piracy and re-uploads</li>
                     </ul>
                     
-                    <h3>Getting Started</h3>
-                    <p>If you're a studio or content owner with a film catalogue, here's your action plan:</p>
+                    <p>But for many mid-budget films, the lifetime value of a well-managed YouTube strategy can rival or eventually <strong>surpass a one-off licence cheque</strong> – especially when you keep IP control.</p>
+                    
+                    <h3>Why YouTube Is Uniquely Suited to Nollywood</h3>
+                    
+                    <h3>1. Audiences Are Already There</h3>
+                    <p>Nigerians and the diaspora already use YouTube as default TV – from long-form sermons and music to full-length movies. As mobile data prices rise and subscription fatigue grows, <strong>free, ad-supported content becomes even more attractive</strong>.</p>
+                    
+                    <h3>2. Nollywood's Fast Production Cycles Fit the Platform</h3>
+                    <p>Nollywood's strengths – fast turnaround, agile crews, high-volume storytelling – match what works on YouTube:</p>
                     <ul>
-                        <li>Audit your existing content library</li>
-                        <li>Set up (or optimize) your YouTube channel</li>
-                        <li>Create a 90-day upload calendar</li>
-                        <li>Implement proper SEO and thumbnails</li>
-                        <li>Apply for Content ID and monetization</li>
+                        <li>Frequent releases</li>
+                        <li>Connected story universes</li>
+                        <li>Rapid experimentation based on audience feedback</li>
                     </ul>
                     
-                    <p><strong>Need help?</strong> Content Motley specializes in YouTube strategy for Nollywood studios. We've helped channels grow from zero to millions of monthly views. Let's talk.</p>
-                `
-            },
-            branddeals: {
-                title: "How to Negotiate Brand Deals (Without Underselling)",
-                category: "MONETIZATION",
-                readTime: "6 min read",
-                author: "Content Motley Team",
-                date: "October 2024",
-                emoji: "🤝",
-                color: "brutal-green",
-                content: `
-                    <p>Too many African creators leave money on the table when negotiating brand deals. They either <strong>undersell their value</strong> or worse, accept deals that damage their audience trust.</p>
+                    <h3>3. Diaspora and Global Curiosity</h3>
+                    <p>International audiences hungry for African stories can find Nollywood on YouTube much more easily than on regional streamers with limited rights. The platform's recommendation system helps Nigerian films travel into <strong>unexpected territories</strong>.</p>
                     
-                    <p>Here's how to negotiate like a pro.</p>
-                    
-                    <h3>Know Your Numbers</h3>
-                    <p>Before any negotiation, you need to know:</p>
+                    <h3>Challenges Nollywood Must Solve on YouTube</h3>
+                    <p>It's not all upside. There are real risks:</p>
                     <ul>
-                        <li><strong>Average views per video</strong> (last 10 uploads)</li>
-                        <li><strong>Engagement rate</strong> (likes + comments / views)</li>
-                        <li><strong>Audience demographics</strong> (age, location, gender)</li>
-                        <li><strong>Subscriber count</strong> and <strong>growth rate</strong></li>
-                        <li><strong>Watch time</strong> and <strong>retention</strong> metrics</li>
+                        <li><strong>Piracy & unlicensed uploads</strong> – without proper Content ID strategy, films leak everywhere.</li>
+                        <li><strong>Under-packaged releases</strong> – great films hidden behind weak thumbnails, vague titles and no subtitles.</li>
+                        <li><strong>Inconsistent quality</strong> – the open nature of YouTube means masterpieces sit next to poorly produced content.</li>
+                        <li><strong>Fragmented rights deals</strong> – legacy contracts may not have been written with digital in mind, creating confusion.</li>
                     </ul>
                     
-                    <h3>Calculating Your Rate</h3>
-                    <p>Several formulas work, but here's a starting point:</p>
-                    <ul>
-                        <li><strong>Dedicated video:</strong> Average views × $0.02-0.05</li>
-                        <li><strong>Integration (60-90 sec):</strong> 50-70% of dedicated rate</li>
-                        <li><strong>Mention (15-30 sec):</strong> 25-40% of dedicated rate</li>
-                    </ul>
-                    <p>Example: 100,000 average views × $0.03 = $3,000 base rate for dedicated video</p>
+                    <p>These are precisely the issues that call for <strong>professionalised support</strong>, not just uploading and hoping.</p>
                     
-                    <h3>What Affects Your Rate</h3>
-                    <p>Adjust up or down based on:</p>
+                    <h3>A YouTube Playbook for Nollywood Producers</h3>
+                    <p>Here's a high-level blueprint for using YouTube as a serious distribution channel:</p>
+                    
+                    <h3>1. Clean Up Your Rights</h3>
+                    <p>Before you upload anything:</p>
                     <ul>
-                        <li><strong>Niche value</strong> – Tech, finance, business pay more</li>
-                        <li><strong>Audience quality</strong> – Diaspora/international audiences = higher rates</li>
-                        <li><strong>Exclusivity</strong> – Competing brand restrictions should cost extra</li>
-                        <li><strong>Usage rights</strong> – If they want to reuse content, charge 2-3x</li>
-                        <li><strong>Timeline</strong> – Rush jobs cost more</li>
+                        <li>Clarify digital and YouTube rights for every title.</li>
+                        <li>Resolve music, talent and third-party rights that could cause strikes.</li>
+                        <li>Where possible, consolidate rights under a clean entity that can collect revenue.</li>
                     </ul>
                     
-                    <h3>Red Flags in Brand Deals</h3>
-                    <p>Walk away if:</p>
+                    <h3>2. Design Your Channel(s) Like a Network</h3>
+                    <p>Think in terms of brands and verticals:</p>
                     <ul>
-                        <li>They want <strong>full ownership</strong> of your content</li>
-                        <li>They ask you to <strong>hide</strong> that it's sponsored</li>
-                        <li>The product doesn't <strong>align with your values</strong></li>
-                        <li>They want <strong>unlimited revisions</strong></li>
-                        <li>Payment terms are longer than <strong>30 days</strong></li>
+                        <li>A flagship channel for full-length movies</li>
+                        <li>A separate channel for series or a specific sub-genre (rom-coms, village dramas, faith, etc.)</li>
+                        <li>Branded playlists that feel like mini-channels inside the channel</li>
                     </ul>
                     
-                    <h3>Negotiation Tactics</h3>
+                    <p>This is exactly how traditional TV and streaming networks think – and Nollywood can mirror that on YouTube.</p>
+                    
+                    <h3>3. Package Like Your Thumbnail Is Your Poster</h3>
                     <ul>
-                        <li><strong>Never give the first number</strong> – Ask for their budget first</li>
-                        <li><strong>Anchor high</strong> – Start 30-50% above your target</li>
-                        <li><strong>Bundle value</strong> – Include social posts, stories, etc.</li>
-                        <li><strong>Create urgency</strong> – "My calendar fills up quickly"</li>
-                        <li><strong>Get it in writing</strong> – Always use contracts</li>
+                        <li>Invest in proper poster-style thumbnails optimised for mobile</li>
+                        <li>Use clear, emotional titles ("She Fell in Love with Her Driver" beats "Love Story 3")</li>
+                        <li>Add subtitles (EN + maybe FR/ES) to open up non-Nigerian audiences</li>
                     </ul>
                     
-                    <h3>Building Long-Term Relationships</h3>
-                    <p>The best deals come from repeat partnerships:</p>
+                    <h3>4. Treat Comments and Community Like Your Focus Group</h3>
+                    <p>YouTube gives instant feedback on:</p>
                     <ul>
-                        <li>Over-deliver on your first collaboration</li>
-                        <li>Share performance metrics proactively</li>
-                        <li>Propose creative ideas for future campaigns</li>
-                        <li>Negotiate multi-video packages for better rates</li>
+                        <li>Which characters people love</li>
+                        <li>Which plotlines connect</li>
+                        <li>Where viewers drop off in the film</li>
                     </ul>
                     
-                    <p><strong>Remember:</strong> Brands need you as much as you need them. Your audience's attention is valuable – price accordingly.</p>
-                `
-            },
-            seo: {
-                title: "YouTube SEO for African Creators: A Complete Guide",
-                category: "SEO",
-                readTime: "7 min read",
-                author: "Content Motley Team",
-                date: "October 2024",
-                emoji: "🔍",
-                color: "brutal-orange",
-                content: `
-                    <p>YouTube is the <strong>second largest search engine</strong> in the world. If your videos don't show up when people search, you're leaving massive views on the table.</p>
+                    <p>Use that data to shape sequels, spin-offs and your next round of scripts.</p>
                     
-                    <p>Here's how to optimize your content for discovery.</p>
-                    
-                    <h3>Understanding YouTube's Algorithm</h3>
-                    <p>YouTube cares about two things:</p>
+                    <h3>5. Protect and Monetise Your Catalogue</h3>
+                    <p>This is where many producers need help:</p>
                     <ul>
-                        <li><strong>Watch time</strong> – How long people watch your videos</li>
-                        <li><strong>Session time</strong> – How long people stay on YouTube after watching</li>
-                    </ul>
-                    <p>SEO gets people to click. Retention keeps the algorithm happy.</p>
-                    
-                    <h3>Keyword Research for African Content</h3>
-                    <p>Start with these tools:</p>
-                    <ul>
-                        <li><strong>YouTube Search</strong> – Type your topic and see autocomplete suggestions</li>
-                        <li><strong>TubeBuddy/VidIQ</strong> – See search volume and competition</li>
-                        <li><strong>Google Trends</strong> – Compare search interest over time</li>
-                        <li><strong>Comments</strong> – What questions does your audience ask?</li>
+                        <li>Set up Content ID correctly</li>
+                        <li>Decide when to claim and monetise vs block</li>
+                        <li>Track and take down channels re-uploading your films without permission</li>
                     </ul>
                     
-                    <h3>Optimizing Your Title</h3>
-                    <p>Your title should:</p>
+                    <p>Done well, this can turn the entire platform into a <strong>discovery and revenue net</strong> for your IP rather than a piracy nightmare.</p>
+                    
+                    <h3>Where Content Motley Comes In</h3>
+                    <p>The transition from "sell film to streamer" to "run a YouTube-first studio" is a <strong>strategy shift</strong>, not just a distribution shift.</p>
+                    
+                    <p><strong>Content Motley exists to help Nollywood producers and studios:</strong></p>
                     <ul>
-                        <li>Include your <strong>main keyword</strong> in the first 60 characters</li>
-                        <li>Create <strong>curiosity</strong> without clickbait</li>
-                        <li>Be <strong>specific</strong> about what viewers will learn/see</li>
-                        <li>Use <strong>numbers</strong> when possible (Top 5, 3 Ways, etc.)</li>
+                        <li>Audit and clean up their rights situation</li>
+                        <li>Design and manage professional YouTube channels and networks</li>
+                        <li>Package films and series for maximum reach and revenue</li>
+                        <li>Implement Content ID and monetisation strategies</li>
+                        <li>Explore brand partnerships and new IP opportunities on top of the films</li>
                     </ul>
                     
-                    <h3>Writing Descriptions That Rank</h3>
-                    <p>Your description structure:</p>
-                    <ul>
-                        <li><strong>First 150 characters</strong> – Hook + main keyword (this shows in search)</li>
-                        <li><strong>Paragraph 1</strong> – Summary of video content with keywords</li>
-                        <li><strong>Timestamps</strong> – Chapters improve retention and CTR</li>
-                        <li><strong>Links</strong> – Social media, website, related videos</li>
-                        <li><strong>Hashtags</strong> – 3-5 relevant hashtags at the bottom</li>
-                    </ul>
+                    <p>As global giants recalibrate, YouTube has quietly become <strong>Nollywood's most reliable stage</strong>. The question is no longer "Will YouTube work?" but "Who will own the playbook?"</p>
                     
-                    <h3>Tags Still Matter (A Little)</h3>
-                    <p>Tags are less important than titles and descriptions, but still use them:</p>
-                    <ul>
-                        <li>Your channel name</li>
-                        <li>Main keyword variations</li>
-                        <li>Related topics</li>
-                        <li>Common misspellings</li>
-                    </ul>
-                    
-                    <h3>Thumbnail CTR Optimization</h3>
-                    <p>SEO gets impressions; thumbnails get clicks. Aim for:</p>
-                    <ul>
-                        <li><strong>4-10% CTR</strong> from browse features</li>
-                        <li><strong>2-5% CTR</strong> from search</li>
-                        <li>A/B test thumbnails if CTR is below average</li>
-                    </ul>
-                    
-                    <h3>Engagement Signals</h3>
-                    <p>YouTube watches how viewers interact:</p>
-                    <ul>
-                        <li><strong>Likes/dislikes ratio</strong></li>
-                        <li><strong>Comments</strong> – Ask questions to drive engagement</li>
-                        <li><strong>Shares</strong> – Make content worth sharing</li>
-                        <li><strong>Subscribers gained</strong> – Use end screens effectively</li>
-                    </ul>
-                    
-                    <h3>Local SEO for African Creators</h3>
-                    <p>Specific tips for our market:</p>
-                    <ul>
-                        <li>Include <strong>country names</strong> in titles when relevant (Nigeria, Kenya, South Africa)</li>
-                        <li>Use <strong>local language keywords</strong> in tags and descriptions</li>
-                        <li>Create content around <strong>local trends</strong> and events</li>
-                        <li>Optimize for <strong>diaspora searches</strong> (e.g., "Nigerian recipes in UK")</li>
-                    </ul>
-                    
-                    <p><strong>SEO is a long game.</strong> Optimize every video, be consistent, and watch your search traffic grow over time.</p>
-                `
-            },
-            calendar: {
-                title: "Content Calendars: The Secret to Consistent Growth",
-                category: "STRATEGY",
-                readTime: "4 min read",
-                author: "Content Motley Team",
-                date: "October 2024",
-                emoji: "📅",
-                color: "brutal-purple",
-                content: `
-                    <p>The difference between hobbyist creators and professionals? <strong>Systems.</strong> And the most important system is your content calendar.</p>
-                    
-                    <h3>Why Calendars Matter</h3>
-                    <ul>
-                        <li><strong>Consistency</strong> – YouTube rewards regular uploads</li>
-                        <li><strong>Quality</strong> – Planning ahead = better content</li>
-                        <li><strong>Stress reduction</strong> – No more "what should I post?"</li>
-                        <li><strong>Brand opportunities</strong> – Easier to plan sponsored content</li>
-                    </ul>
-                    
-                    <h3>How Far Ahead to Plan</h3>
-                    <ul>
-                        <li><strong>Minimum:</strong> 2 weeks ahead</li>
-                        <li><strong>Ideal:</strong> 4-6 weeks ahead</li>
-                        <li><strong>Themes:</strong> 3 months ahead</li>
-                        <li><strong>Major campaigns:</strong> 6+ months ahead</li>
-                    </ul>
-                    
-                    <h3>What to Include</h3>
-                    <p>For each video, plan:</p>
-                    <ul>
-                        <li>Video title and topic</li>
-                        <li>Target keyword</li>
-                        <li>Content type (tutorial, vlog, review, etc.)</li>
-                        <li>Filming date</li>
-                        <li>Editing deadline</li>
-                        <li>Publish date and time</li>
-                        <li>Promotional plan</li>
-                    </ul>
-                    
-                    <h3>Tools We Recommend</h3>
-                    <ul>
-                        <li><strong>Notion</strong> – All-in-one workspace with templates</li>
-                        <li><strong>Trello</strong> – Visual board for content pipeline</li>
-                        <li><strong>Google Sheets</strong> – Simple and shareable</li>
-                        <li><strong>Airtable</strong> – Database-style organization</li>
-                    </ul>
-                    
-                    <h3>Content Pillars</h3>
-                    <p>Build your calendar around 3-5 content pillars:</p>
-                    <ul>
-                        <li>Example for lifestyle creator: Fashion, Travel, Day-in-life, Reviews, Q&A</li>
-                        <li>Example for tech creator: Reviews, Tutorials, News, Comparisons, Shorts</li>
-                    </ul>
-                    <p>Rotate through pillars to keep content fresh while staying on brand.</p>
-                    
-                    <h3>Batching for Efficiency</h3>
-                    <p>Film and edit in batches:</p>
-                    <ul>
-                        <li>Dedicate 1-2 filming days per week</li>
-                        <li>Batch similar content together</li>
-                        <li>Stay 2+ weeks ahead in completed videos</li>
-                        <li>Buffer for unexpected opportunities or delays</li>
-                    </ul>
-                    
-                    <p><strong>Start simple.</strong> Even a basic spreadsheet beats no plan at all. Your future self will thank you.</p>
-                `
-            },
-            mediacompany: {
-                title: "From Creator to Media Company: Making the Leap",
-                category: "BUSINESS",
-                readTime: "9 min read",
-                author: "Sholz S. Laelle",
-                date: "September 2024",
-                emoji: "🚀",
-                color: "brutal-cyan",
-                content: `
-                    <p>There comes a point where being a "creator" isn't enough. You're not just making videos – you're running a business. It's time to think like a <strong>media company</strong>.</p>
-                    
-                    <h3>Signs You're Ready</h3>
-                    <ul>
-                        <li>You're turning down opportunities due to <strong>time constraints</strong></li>
-                        <li>Your revenue is <strong>consistent</strong> and growing</li>
-                        <li>You're doing tasks that <strong>someone else could do</strong></li>
-                        <li>You have ideas for <strong>multiple channels or products</strong></li>
-                        <li>Brands are asking for <strong>more than you can deliver</strong></li>
-                    </ul>
-                    
-                    <h3>The Media Company Mindset</h3>
-                    <p>Stop thinking like a creator. Start thinking like a CEO:</p>
-                    <ul>
-                        <li><strong>You are the brand</strong>, but you don't have to do everything</li>
-                        <li><strong>Time is your scarcest resource</strong> – protect it</li>
-                        <li><strong>Revenue diversification</strong> reduces risk</li>
-                        <li><strong>Systems and processes</strong> beat hustle long-term</li>
-                        <li><strong>Team members</strong> are investments, not costs</li>
-                    </ul>
-                    
-                    <h3>First Hires to Make</h3>
-                    <p>In order of impact:</p>
-                    <ul>
-                        <li><strong>Video editor</strong> – Frees 10-20 hours/week immediately</li>
-                        <li><strong>Thumbnail designer</strong> – Consistency + quality improvement</li>
-                        <li><strong>Virtual assistant</strong> – Emails, scheduling, admin tasks</li>
-                        <li><strong>Community manager</strong> – Comments, social media engagement</li>
-                        <li><strong>Content manager</strong> – Planning, publishing, optimization</li>
-                    </ul>
-                    
-                    <h3>Building Multiple Revenue Streams</h3>
-                    <p>A true media company doesn't rely on one income source:</p>
-                    <ul>
-                        <li><strong>YouTube AdSense</strong> – Base revenue</li>
-                        <li><strong>Brand partnerships</strong> – Premium revenue</li>
-                        <li><strong>Digital products</strong> – Courses, templates, presets</li>
-                        <li><strong>Merchandise</strong> – Fan products</li>
-                        <li><strong>Consulting/coaching</strong> – High-ticket services</li>
-                        <li><strong>Speaking/appearances</strong> – Leveraging your brand</li>
-                        <li><strong>Licensing</strong> – Content syndication</li>
-                    </ul>
-                    
-                    <h3>Legal & Business Structure</h3>
-                    <p>Professionalize your setup:</p>
-                    <ul>
-                        <li><strong>Register a business</strong> – LLC or equivalent in your country</li>
-                        <li><strong>Separate accounts</strong> – Business banking and accounting</li>
-                        <li><strong>Contracts</strong> – For team members and brand deals</li>
-                        <li><strong>Insurance</strong> – Liability and equipment coverage</li>
-                        <li><strong>Accountant</strong> – Tax planning and compliance</li>
-                    </ul>
-                    
-                    <h3>Expanding Your Empire</h3>
-                    <p>Once your foundation is solid:</p>
-                    <ul>
-                        <li><strong>Launch additional channels</strong> – Different niches or formats</li>
-                        <li><strong>Acquire channels</strong> – Buy underperforming channels in your niche</li>
-                        <li><strong>Talent management</strong> – Help other creators grow</li>
-                        <li><strong>Production services</strong> – Studio, equipment, expertise for hire</li>
-                        <li><strong>Brand building</strong> – Products and services beyond content</li>
-                    </ul>
-                    
-                    <h3>Common Mistakes to Avoid</h3>
-                    <ul>
-                        <li><strong>Scaling too fast</strong> – Grow revenue before growing team</li>
-                        <li><strong>Losing your voice</strong> – Stay involved in creative direction</li>
-                        <li><strong>Ignoring finances</strong> – Track every naira/dollar</li>
-                        <li><strong>Burning out anyway</strong> – Delegation without systems = chaos</li>
-                    </ul>
-                    
-                    <p><strong>The goal isn't to work more</strong> – it's to build something bigger than yourself while working smarter. That's the media company mindset.</p>
-                    
-                    <p>Ready to make the leap? Content Motley helps established creators build the systems and teams they need to scale. Let's talk.</p>
+                    <p>If you're sitting on a catalogue of Nollywood titles – or planning your next slate – now is the time to treat YouTube as a <strong>core revenue and audience pillar</strong>, not a last-minute afterthought.</p>
                 `
             }
         };
@@ -979,9 +738,9 @@
             content.innerHTML = `
                 <div class="mb-8">
                     <span class="inline-block bg-brutal-yellow text-brutal-black px-3 py-1 font-mono text-xs font-bold mb-4">${article.category}</span>
-                    <h1 class="font-syne font-extrabold text-3xl md:text-5xl text-brutal-yellow mb-4">${article.title}</h1>
-                    <div class="flex flex-wrap items-center gap-4 text-brutal-white/70 font-mono text-sm">
-                        <span>By ${article.author}</span>
+                    <h1 class="font-syne font-extrabold text-3xl md:text-5xl text-brutal-white mb-4">${article.title}</h1>
+                    <div class="flex flex-wrap items-center gap-4 font-mono text-sm text-brutal-white/70">
+                        <span>${article.author}</span>
                         <span>•</span>
                         <span>${article.date}</span>
                         <span>•</span>
