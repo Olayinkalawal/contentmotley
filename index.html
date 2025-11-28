@@ -1277,23 +1277,102 @@
                     </div>
                 </div>
 
-                <!-- Right side - Canva Form -->
+                <!-- Right side - Form -->
                 <div class="reveal-right">
-                    <div class="bg-brutal-black border-4 border-brutal-yellow p-4 shadow-brutal-xl">
-                        <h3 class="font-syne font-bold text-2xl text-brutal-yellow mb-4 text-center">Get in Touch</h3>
-                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; overflow: hidden; border-radius: 4px;">
-                            <iframe 
-                                loading="lazy" 
-                                style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-                                src="https://www.canva.com/design/DAG5-aC5XEk/jVb0qrWs0XRik7n95um1bw/view?embed" 
-                                allowfullscreen="allowfullscreen" 
-                                allow="fullscreen">
-                            </iframe>
+                    <form 
+                        action="https://formspree.io/f/mvgjwbkb" 
+                        method="POST"
+                        class="bg-brutal-black border-4 border-brutal-black p-8 shadow-brutal-xl"
+                        id="contactForm"
+                    >
+                        <h3 class="font-syne font-bold text-2xl text-brutal-yellow mb-6">Get in Touch</h3>
+                        
+                        <!-- Name -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Your Name *</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="John Doe"
+                            >
                         </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Email Address *</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="john@example.com"
+                            >
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Phone / WhatsApp</label>
+                            <input 
+                                type="tel" 
+                                name="phone"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="+234 800 000 0000"
+                            >
+                        </div>
+
+                        <!-- Type -->
+                        <div class="mb-4">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">I am a... *</label>
+                            <select 
+                                name="type" 
+                                required
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors cursor-pointer"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="Creator">Creator / YouTuber</option>
+                                <option value="Media Owner">Media Owner / Filmmaker</option>
+                                <option value="Brand">Brand / Agency</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-6">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">Your Message *</label>
+                            <textarea 
+                                name="message" 
+                                required
+                                rows="4"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors resize-none"
+                                placeholder="Tell us about your channel, goals, or how we can help..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Channel Link -->
+                        <div class="mb-6">
+                            <label class="font-mono text-sm text-brutal-white/80 block mb-2">YouTube Channel Link</label>
+                            <input 
+                                type="url" 
+                                name="channel_link"
+                                class="w-full bg-brutal-white text-brutal-black border-4 border-brutal-white px-4 py-3 font-mono text-sm focus:outline-none focus:border-brutal-yellow transition-colors"
+                                placeholder="https://youtube.com/@yourchannel"
+                            >
+                        </div>
+
+                        <!-- Submit -->
+                        <button 
+                            type="submit"
+                            class="w-full bg-brutal-yellow text-brutal-black px-8 py-4 font-syne font-bold text-lg border-4 border-brutal-yellow hover:bg-brutal-white hover:border-brutal-white transition-colors shadow-brutal"
+                        >
+                            Send Message →
+                        </button>
+
                         <p class="font-mono text-xs text-brutal-white/60 mt-4 text-center">
                             We typically respond within 24-48 hours.
                         </p>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
