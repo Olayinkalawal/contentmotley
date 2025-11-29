@@ -1492,22 +1492,22 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // Clear hash from URL immediately and after page loads (keeps URL clean)
-        function clearHash() {
-            if (window.location.hash) {
-                history.replaceState(null, null, window.location.pathname);
+        // Check if we need to scroll to a section (from blog page or other navigation)
+        window.addEventListener('load', function() {
+            const scrollToSection = sessionStorage.getItem('scrollToSection');
+            if (scrollToSection) {
+                sessionStorage.removeItem('scrollToSection');
+                const target = document.getElementById(scrollToSection);
+                if (target) {
+                    setTimeout(() => {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
             }
-        }
-        
-        // Clear hash on page load (for links from other pages like blog)
-        if (window.location.hash) {
-            const hash = window.location.hash;
-            const target = document.querySelector(hash);
-            if (target) {
-                // Let browser scroll to target first, then clear hash
-                setTimeout(clearHash, 50);
-            }
-        }
+        });
 
         // Smooth scroll for anchor links (same page)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
